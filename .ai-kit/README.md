@@ -1,59 +1,131 @@
-# .ai-kit — AI Dev Workflow Kit
+# .ai-kit — Portable Agent Governance Kit
 
-> **Version:** 1.0
-> **Copy this folder into any project to bring the full EPCC workflow system.**
+> **Version:** 3.5 — 2026-02-28
+> **Copy this single folder into any new project to bring the full Governor Mode system.**
+> **This kit is append-only versioned; latest patch blocks override older text.**
+
+---
+
+## Read This First
+
+| # | File | Why |
+|---|------|-----|
+| 1 | `AGENTS.md` | Agent identity, rules, coding standards — the brain |
+| 2 | `prompts/START.md` | Pick a template → activate 2 resources → begin EXPLORE |
+| 3 | `prompts/WORKFLOW.md` | The EPCC engine (22 hard rules) — how every task runs |
+
+---
+
+## When to Use What
+
+| Need | Go To |
+|------|-------|
+| Start a new task | `prompts/START.md` — pick a template (A–J) |
+| Decision-heavy task (UI, auth, schema) | `prompts/DECISION-GATES.md` — Gates A–H ask the right questions |
+| Quick commands | `prompts/ACTIVATE.md` — 21 commands for speed |
+| Find the right resource | `resources/RESOURCE-INDEX.md` + `resources/cards/` |
+| Persist decisions across sessions | `prompts/DECISIONS-LOCKED.md` — auto-filled by `LOCK_DECISIONS` |
+| Use external skills | `resources/external/AWESOME-SKILLS.md` → `PICK_BUNDLE` → `PICK_SKILLS` |
+| Post-task learning | `prompts/LESSONS-LEARNED.md` |
+
+---
+
+## Quickstart (4 Steps)
+
+1. **Pick a START template** — `START_MENU` shows all 10 options (A–J)
+2. **Run Decision Gates** — `RUN_DECISION_GATES` asks only missing questions (max 8/round)
+3. **Generate Decision Report** — `GENERATE_DECISION_REPORT` prints locked choices
+4. **Lock and build** — `LOCK_DECISIONS` → then PLAN → CODE → VERIFY → AUDIT
+
+---
+
+## How Decision Gates Work
+
+The agent **will not guess** on choice-heavy decisions (UI style, auth model, schema, architecture). Instead:
+
+1. **Gates trigger automatically** based on task keywords (e.g., "landing page" triggers Gates A+D+E+F+G)
+2. **Agent asks questions** in rounds of max 8, grouped by gate
+3. **You answer** — agent presents 2–3 options with pros/cons for each choice
+4. **Decisions lock** to `DECISIONS-LOCKED.md` and persist across sessions
+5. **Escape hatch** — say the exact phrase `"INPUTS ARE FIXED, SKIP GATES."` to bypass
+
+See `prompts/DECISION-GATES.md` for full gate definitions (A–H).
+
+---
+
+## Bring Your Own Resources
+
+This kit ships with **example cards** and **template slots**. To add your own:
+
+1. **Add resource descriptions** to `resources/RESOURCE-INDEX.md` following the template format
+2. **Create resource cards** in `resources/cards/` (see existing cards for structure)
+3. **Add external sources** to `resources/external/sources/` and register in `EXTERNAL-RESOURCE-REGISTRY.md`
+
+> **Note:** Resource cards are modular summaries — each one describes what a resource does, when to use it, and its decision gates. The kit's governance layer (EPCC, max-2, decision gates) works with any resources you add.
+
+---
 
 ## What's Inside
 
 ```
 .ai-kit/
-├── AGENTS.md                          ← Agent brain (identity, rules, commands)
+├── AGENTS.md                              ← Agent brain (identity, rules, commands)
+├── README.md                              ← This file
 ├── prompts/
-│   ├── ACTIVATE.md                    ← Activation phrases + banner rules
-│   ├── WORKFLOW.md                    ← EPCC engine + hard rules
-│   ├── START.md                       ← Start menu templates (A–H)
-│   └── USAGE-LOG.md                   ← Task activation tracker
+│   ├── ACTIVATE.md                        ← Activation phrases + 21 commands
+│   ├── DECISION-GATES.md                  ← Gates A–H + trigger heuristics
+│   ├── DECISION-REPORT.md                 ← Template for decision output
+│   ├── DECISIONS-LOCKED.md                ← Persistent locked decisions (per-task)
+│   ├── LESSONS-LEARNED.md                 ← Post-task lesson log
+│   ├── SKILLS-ALLOWLIST.md                ← Per-task external skill allowlist
+│   ├── START.md                           ← 10 start templates (A–J)
+│   ├── SUBAGENTS.md                       ← Subagent delegation guide
+│   ├── SYSTEM-STATUS-REPORT.md            ← Audit report (v3.3 resync)
+│   ├── TASK-TEMPLATES.md                  ← 6 reusable EPCC task templates
+│   ├── USAGE-LOG.md                       ← Task activation tracker
+│   ├── USER-GUIDE.md                      ← User-facing guide + command reference
+│   └── WORKFLOW.md                        ← EPCC engine + 22 hard rules
 ├── resources/
-│   ├── RESOURCE-INDEX.md              ← Master resource index
-│   ├── cards/                         ← 6 resource cards
+│   ├── RESOURCE-INDEX.md                  ← Master index for all resources
+│   ├── cards/                             ← 7 modular resource cards (v3.3)
+│   │   ├── anti-ai-slop-details.md
+│   │   ├── component-logic-spec.md
+│   │   ├── content-architecture.md
+│   │   ├── deliverables-specs.md
+│   │   ├── landing-bg-asset-pipeline.md
+│   │   ├── reference-style-extraction.md
+│   │   └── ui-inspiration-to-lane.md
 │   └── external/
-│       └── EXTERNAL-RESOURCE-REGISTRY.md ← Template for tracking your own external resources
-└── README.md                          ← This file
+│       ├── AWESOME-SKILLS.md              ← External skills library reference
+│       ├── AWESOME-SKILLS-BUNDLES.md      ← 7 role-based bundles
+│       ├── AWESOME-SKILLS-WORKFLOWS.md    ← 3 EPCC-mapped playbooks
+│       ├── EXTERNAL-RESOURCE-REGISTRY.md  ← External resources registry (template)
+│       ├── cards/                         ← 7 external resource cards (examples)
+│       │   ├── phased-build-protocol.md
+│       │   ├── glassmorphism-reference.md
+│       │   ├── design-tokens.md
+│       │   ├── agentic-dev-workflow.md
+│       │   ├── design-system-framework.md
+│       │   ├── design-search-toolkit.md
+│       │   └── structured-debugger.md
+│       └── sources/                       ← Your source snapshots (add your own)
+│           └── README.md
 ```
+
+---
 
 ## Setup in a New Project
 
-Use the install script from the repo root:
-
 ```bash
-./scripts/install.sh /path/to/your/project
+cp -R .ai-kit/ /path/to/new-project/.ai-kit/
 ```
 
-Or manually:
+Then create a thin pointer at the new project root:
 
 ```bash
-cp -R .ai-kit/ /path/to/your/project/.ai-kit/
+echo '# See .ai-kit/AGENTS.md for all agent rules and resources.' > /path/to/new-project/AGENTS.md
 ```
 
-Then create a pointer at the project root:
+## What You Still Need Separately
 
-```bash
-echo '# See .ai-kit/AGENTS.md for all agent rules and resources.' > /path/to/your/project/AGENTS.md
-```
-
-## Quick Start
-
-1. Open `prompts/START.md` and pick a template (A–H).
-2. Paste the template into your AI coding agent.
-3. The agent reads `AGENTS.md` + `RESOURCE-INDEX.md`, activates 2 resources, and begins EXPLORE.
-
-## Adding Your Own Resources
-
-1. Create a card in `resources/cards/your-resource-name.md`.
-2. Add it to `resources/RESOURCE-INDEX.md`.
-3. Add an activation phrase to `prompts/ACTIVATE.md`.
-4. Register external resources in `resources/external/EXTERNAL-RESOURCE-REGISTRY.md`.
-
-## Paths
-
-All internal links use **relative paths** from within `.ai-kit/`. No absolute paths.
+Your own **resource files** (guides, prompts, methodologies) that you want the agent to reference. Add them to `resources/RESOURCE-INDEX.md` and create cards in `resources/cards/`. The kit's governance layer works with any resources you provide.
