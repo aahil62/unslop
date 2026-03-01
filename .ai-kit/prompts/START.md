@@ -175,6 +175,8 @@ Begin EXPLORE. Do not plan or code yet.
 
 ---
 
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.3) — New Start Templates — 2026-02-28
 
 ## I) Landing (Illustrated BG Lane)
@@ -228,6 +230,8 @@ then GENERATE_PAGE_COPY for content. Do not plan or code yet.
 
 ---
 
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.5) — Cinematic Landing Template — 2026-03-01
 
 ## K) Cinematic Landing
@@ -263,6 +267,8 @@ LOCK_DECISIONS. Then proceed to PLAN.
 > **Rule:** Template K follows the same max-2 ACTIVE resource rule. Only one landing lane may be PRIMARY at a time — activating K makes Templates D and I REF-ONLY.
 
 ---
+
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v0.1.2) — Cofounder Mode Template — 2026-03-01
 
@@ -307,6 +313,8 @@ then RUN_DECISION_GATES. Do not plan or code yet.
 
 ---
 
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+
 ## 🩹 [LEGACY] SYSTEM PATCH (v0.2.1) — START Templates Alignment — 2026-03-01
 
 **Override for Templates A–H:**
@@ -323,10 +331,10 @@ For minimal-kit users, the canonical path is:
 - Open `.ai-kit/resources/RESOURCE-INDEX.md` and use **"Which 2 to Activate"** (Canonical) to choose exactly 1 PRIMARY + 1 SUPPORT.
 - Then follow EPCC: EXPLORE → RUN_DECISION_GATES (if triggered) → Decision Report → LOCK_DECISIONS → PLAN → CODE → VERIFY → AUDIT.
 
-## 🔒 CANONICAL (KIT_VERSION v0.2.2)
+## 🔒 CANONICAL (KIT_VERSION v2.0.0)
 
 This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `.ai-kit/VERSIONING.md`. 
-If any older section contradicts this block or the core principles of v0.2.2, treat the older section as deprecated.
+If any older section contradicts this block or the core principles of v2.0.0, treat the older section as deprecated.
 
 **START.md Invariants:**
 - **Entry Point:** Always use templates from this file to start tasks.

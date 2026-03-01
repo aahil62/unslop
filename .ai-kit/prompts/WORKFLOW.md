@@ -164,6 +164,8 @@ Workflow step: EXPLORE / PLAN / CODE / VERIFY / AUDIT
 
 ---
 
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+
 ## 🩹 [LEGACY] SYSTEM PATCH — 2026-02-25
 
 ### Rule 6: Exactly 1 Workflow Engine Per Task
@@ -210,6 +212,8 @@ The banner must always show `ENGINE: EPCC`. If a workflow protocol is active as 
 
 ---
 
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+
 ## 🩹 [LEGACY] SYSTEM PATCH (v1.3) — 2026-02-25
 
 ### Terminology Resolution: ENGINE vs WORKFLOW PROTOCOL
@@ -233,6 +237,8 @@ When we say "choose one engine" (Rule 6, lines 169–178), we mean: **choose at 
 **Key clarification:** EPCC is not one of the choices — it is always active. The choice is which *optional* WORKFLOW PROTOCOL layer to add on top, if any.
 
 ---
+
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3) — Decision Gates Enforcement — 2026-02-28
 
@@ -280,6 +286,8 @@ The **only** way to skip Decision Gates is the exact phrase: `"INPUTS ARE FIXED,
 
 ---
 
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.1) — External Skills Enforcement — 2026-02-28
 
 ### Rule 16: External Skills Are REF-ONLY Unless Allowlisted
@@ -302,6 +310,8 @@ Never invoke an external skill with `risk: unknown` or `risk: high` (per `skills
 **No silent invocation of unvetted skills. Ever.**
 
 ---
+
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.2) — Subagents, Lessons, Task Discipline — 2026-02-28
 
@@ -343,6 +353,8 @@ For tasks meeting subagent criteria (see `prompts/SUBAGENTS.md`):
 
 ---
 
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.3) — UI Lane + Anti-Slop Rules — 2026-02-28
 
 ### Rule 21: UI Lane Must Be Locked Before PLAN
@@ -367,6 +379,8 @@ For any task that produces visible UI (landing, dashboard, component, page):
 
 ---
 
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+
 ## 🩹 [LEGACY] SYSTEM PATCH (v0.2.1) — WORKFLOW Polish Alignment — 2026-03-01
 
 **Override for Phase 5 (Polish):**
@@ -374,10 +388,10 @@ The instruction "Apply Design-Elements refinements if UI is involved" references
 - For minimal kit users: if UI work is involved, use `cards/anti-ai-slop-details.md` as the Polish checklist.
 - Keep max-2 active resources: if a SUPPORT is already active, treat `anti-ai-slop-details.md` as REF-ONLY and still apply its checklist during the Polish phase.
 
-## 🔒 CANONICAL (KIT_VERSION v0.2.2)
+## 🔒 CANONICAL (KIT_VERSION v2.0.0)
 
 This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `.ai-kit/VERSIONING.md`. 
-If any older section contradicts this block or the core principles of v0.2.2, treat the older section as deprecated.
+If any older section contradicts this block or the core principles of v2.0.0, treat the older section as deprecated.
 
 **WORKFLOW.md Invariants:**
 - **The Engine:** EPCC (Explore → Plan → Code → Check → Polish → Ship) is the only engine.

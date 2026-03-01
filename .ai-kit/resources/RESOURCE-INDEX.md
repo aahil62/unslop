@@ -194,6 +194,8 @@ Each scenario activates **exactly 2** resources (1 PRIMARY + 1 SUPPORT). Others 
 
 ---
 
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+
 ## 🩹 [LEGACY] SYSTEM PATCH — 2026-02-25
 
 ### Quality Gates (Replaces Numeric Claims)
@@ -243,6 +245,8 @@ Resource quality is measured by **pass/fail gates**, not palette counts or price
 
 ---
 
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+
 ## 🩹 [LEGACY] SYSTEM PATCH (v1.1) — 2026-02-25
 
 ### Domain Tags for Resources
@@ -273,6 +277,8 @@ Resource quality is measured by **pass/fail gates**, not palette counts or price
 **Design Search Toolkit** remains `SUPPORT` / reference-only. It provides data-driven search across styles, palettes, and fonts but does not set authoritative tokens.
 
 ---
+
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v1.3) — 2026-02-25
 
@@ -336,6 +342,8 @@ This is consistent with PATCH (v1.2) and confirmed here for canonical clarity.
 
 ---
 
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+
 ## 🩹 [LEGACY] SYSTEM PATCH (v3) — 2026-02-28
 
 ### Resource Classification Table
@@ -387,6 +395,8 @@ When running Decision Gates, ask questions in **rounds of max 8**. Group by gate
 
 ---
 
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.1) — External Skills Library — 2026-02-28
 
 ### External Skills Library Entry
@@ -422,6 +432,8 @@ This resource is **never PRIMARY or SUPPORT**. It is always reference-only, with
 
 ---
 
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.3) — New Resource Cards — 2026-02-28
 
 ### Resource Classification Table (v3.3 Additions)
@@ -445,6 +457,8 @@ This resource is **never PRIMARY or SUPPORT**. It is always reference-only, with
 - **Max-2 active resources** still applies. If a card can't be SUPPORT, it becomes REF-ONLY but its key outputs still appear in the Decision Report.
 
 ---
+
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.5) — Cinematic Landing Lane — 2026-03-01
 
@@ -474,6 +488,8 @@ This resource is **never PRIMARY or SUPPORT**. It is always reference-only, with
 
 ---
 
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+
 ## 🩹 [LEGACY] SYSTEM PATCH (v0.1.2) — Technical Cofounder Contract — 2026-03-01
 
 ### Resource Classification Table (v0.1.2 Addition)
@@ -491,10 +507,10 @@ This resource is **never PRIMARY or SUPPORT**. It is always reference-only, with
 
 ---
 
-## 🔒 CANONICAL (KIT_VERSION v0.2.2)
+## 🔒 CANONICAL (KIT_VERSION v2.0.0)
 
 This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `../VERSIONING.md`. 
-If any older section contradicts this block or the core principles of v0.2.2, treat the older section as deprecated.
+If any older section contradicts this block or the core principles of v2.0.0, treat the older section as deprecated.
 
 **RESOURCE-INDEX.md Invariants:**
 - **Max-2 Active:** Exactly 1 PRIMARY + 1 SUPPORT. All others are REF-ONLY.

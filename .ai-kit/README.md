@@ -1,6 +1,6 @@
 # .ai-kit — Portable Agent Governance Kit
 
-> **KIT_VERSION:** v0.2.2 (See `VERSIONING.md`)
+> **KIT_VERSION:** v2.0.0 (See `VERSIONING.md`)
 > **Copy this single folder into any new project to bring the full Governor Mode system.**
 > **This kit is versioned; canonical version overrides legacy patch blocks.**
 

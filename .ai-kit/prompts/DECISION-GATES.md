@@ -546,6 +546,8 @@ Proceeding to PLAN.
 
 ---
 
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.1) — Skill Selection Gate — 2026-02-28
 
 ### Gate H: Skill Selection Gate
@@ -593,6 +595,8 @@ The following row is added to the Decision Trigger Heuristics table:
 
 ---
 
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.2) — Non-Trivial Task Heuristic — 2026-02-28
 
 ### Complexity-Based Plan Trigger
@@ -608,6 +612,8 @@ The following row is added to the Decision Trigger Heuristics:
 This catches tasks that are complex but don't match existing keyword heuristics — for example, a multi-file refactor that doesn't touch auth, UI, or architecture keywords.
 
 ---
+
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.3) — Gate Extensions for UI, Content, and Specs — 2026-02-28
 
@@ -668,6 +674,8 @@ For product builds (detected by: SaaS, app, product, platform, marketplace):
 
 ---
 
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.5) — Cinematic Landing Lane — 2026-03-01
 
 ### Gate D Extension: Cinematic Landing Lane Option (v3.5)
@@ -712,10 +720,10 @@ When Gate D (UI Genre + Aesthetic Lane) triggers and the user explicitly selects
 
 ---
 
-## 🔒 CANONICAL (KIT_VERSION v0.2.2)
+## 🔒 CANONICAL (KIT_VERSION v2.0.0)
 
 This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `.ai-kit/VERSIONING.md`. 
-If any older section contradicts this block or the core principles of v0.2.2, treat the older section as deprecated.
+If any older section contradicts this block or the core principles of v2.0.0, treat the older section as deprecated.
 
 **DECISION-GATES.md Invariants:**
 - **Mandatory:** If triggered by keywords or resource type, gates must be answered before PLAN.

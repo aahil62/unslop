@@ -1,6 +1,6 @@
 # AI Dev Workflow Kit
 
-> **KIT_VERSION:** v0.2.2 (See `.ai-kit/VERSIONING.md`)
+> **KIT_VERSION:** v2.0.0 (See `.ai-kit/VERSIONING.md`)
 > A drop-in agent workflow system for any AI-powered coding environment.
 > Enforces structured development, scope control, and quality gates on every task.
 
@@ -67,7 +67,7 @@ Open `.ai-kit/prompts/START.md` and choose a template. Templates activate exactl
 | K | Cinematic Landing | Cinematic Landing Lane | Content Architecture | Preset-driven cinematic sites |
 | L | Cofounder Mode | (task-appropriate card) | Technical Cofounder Contract | Vague ideas → V1 builds |
 
-> Templates A–H use `<placeholder>` names — replace with your own resources or use the external example cards in `resources/external/cards/`. Templates I–L reference shipped cards.
+> Templates I–L use `<placeholder>` names — replace with your own resources or use the external example cards in `resources/external/cards/`. Templates I–L reference shipped cards.
 
 ### 3. Paste and Go
 

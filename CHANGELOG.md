@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v2.0.0] - 2026-03-01
+### Added & Changed
+- Versioning unified to universal v2.0.0.
+- Decision Gates + persistence enforced for choice-heavy tasks.
+- Max-2 governor + banner protocol actively enforced.
+- Minimal-kit linkage fixes applied so START templates work out-of-the-box.
+- Cinematic lane + cofounder mode shipped.
+
 ## [v0.2.2] - 2026-03-01
 ### Fixed
 - Docs: clarified minimal-kit pointer in START.md.

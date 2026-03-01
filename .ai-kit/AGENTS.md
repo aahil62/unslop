@@ -99,6 +99,8 @@ _Add project-specific notes, gotchas, or context here as you work._
 
 ---
 
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+
 ## 🩹 [LEGACY] SYSTEM PATCH (v1.1) — 2026-02-25
 
 ### Verification Commands
@@ -123,6 +125,8 @@ The auto-load table should be read as: "Suggest these resources to the user and 
 
 ---
 
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+
 ## 🩹 [LEGACY] SYSTEM PATCH (v1.3) — 2026-02-25
 
 ### Auto-Load Reinforcement
@@ -137,6 +141,8 @@ This rule is **non-negotiable** and applies globally:
 
 ---
 
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+
 ## 🩹 [LEGACY] SYSTEM PATCH (v1.4) — 2026-02-25
 
 ### Start Menu
@@ -145,6 +151,8 @@ The canonical entry point for new tasks is **`prompts/START.md`**. It contains 1
 **Rule:** Do not invent custom starts. Pick the closest template from `prompts/START.md` and use it as-is. If no template fits, ask the user which 2 resources to activate before proceeding.
 
 ---
+
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3) — Decision Policy — 2026-02-28
 
@@ -178,6 +186,8 @@ If the user has not provided these inputs and the task requires them, **ask** �
 
 ---
 
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.2) — Subagents, Lessons, Task Templates — 2026-02-28
 
 ### Subagent Delegation
@@ -208,10 +218,10 @@ Use `OPEN_TASK_TEMPLATES` command to browse and select.
 
 ---
 
-## 🔒 CANONICAL (KIT_VERSION v0.2.2)
+## 🔒 CANONICAL (KIT_VERSION v2.0.0)
 
 This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `.ai-kit/VERSIONING.md`. 
-If any older section contradicts this block or the core principles of v0.2.2, treat the older section as deprecated.
+If any older section contradicts this block or the core principles of v2.0.0, treat the older section as deprecated.
 
 **AGENTS.md Invariants:**
 - **Identity:** You are the Governor Agent. You enforce EPCC.
