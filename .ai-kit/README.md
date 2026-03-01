@@ -1,8 +1,8 @@
 # .ai-kit — Portable Agent Governance Kit
 
-> **Version:** 3.5 — 2026-02-28
+> **KIT_VERSION:** v0.2.2 (See `VERSIONING.md`)
 > **Copy this single folder into any new project to bring the full Governor Mode system.**
-> **This kit is append-only versioned; latest patch blocks override older text.**
+> **This kit is versioned; canonical version overrides legacy patch blocks.**
 
 ---
 
@@ -20,19 +20,18 @@
 
 | Need | Go To |
 |------|-------|
-| Start a new task | `prompts/START.md` — pick a template (A–J) |
+| Start a new task | `prompts/START.md` — pick a template (A–L) |
 | Decision-heavy task (UI, auth, schema) | `prompts/DECISION-GATES.md` — Gates A–H ask the right questions |
-| Quick commands | `prompts/ACTIVATE.md` — 21 commands for speed |
+| Quick commands | `prompts/ACTIVATE.md` — commands for speed |
 | Find the right resource | `resources/RESOURCE-INDEX.md` + `resources/cards/` |
 | Persist decisions across sessions | `prompts/DECISIONS-LOCKED.md` — auto-filled by `LOCK_DECISIONS` |
-| Use external skills | `resources/external/AWESOME-SKILLS.md` → `PICK_BUNDLE` → `PICK_SKILLS` |
 | Post-task learning | `prompts/LESSONS-LEARNED.md` |
 
 ---
 
 ## Quickstart (4 Steps)
 
-1. **Pick a START template** — `START_MENU` shows all 10 options (A–J)
+1. **Pick a START template** — `START_MENU` shows all 12 options (A–L)
 2. **Run Decision Gates** — `RUN_DECISION_GATES` asks only missing questions (max 8/round)
 3. **Generate Decision Report** — `GENERATE_DECISION_REPORT` prints locked choices
 4. **Lock and build** — `LOCK_DECISIONS` → then PLAN → CODE → VERIFY → AUDIT
@@ -55,7 +54,7 @@ See `prompts/DECISION-GATES.md` for full gate definitions (A–H).
 
 ## Bring Your Own Resources
 
-This kit ships with **example cards** and **template slots**. To add your own:
+This kit ships with **9 cards** and **template slots**. To add your own:
 
 1. **Add resource descriptions** to `resources/RESOURCE-INDEX.md` following the template format
 2. **Create resource cards** in `resources/cards/` (see existing cards for structure)
@@ -72,44 +71,40 @@ This kit ships with **example cards** and **template slots**. To add your own:
 ├── AGENTS.md                              ← Agent brain (identity, rules, commands)
 ├── README.md                              ← This file
 ├── prompts/
-│   ├── ACTIVATE.md                        ← Activation phrases + 21 commands
+│   ├── ACTIVATE.md                        ← Activation phrases + commands
 │   ├── DECISION-GATES.md                  ← Gates A–H + trigger heuristics
 │   ├── DECISION-REPORT.md                 ← Template for decision output
 │   ├── DECISIONS-LOCKED.md                ← Persistent locked decisions (per-task)
 │   ├── LESSONS-LEARNED.md                 ← Post-task lesson log
 │   ├── SKILLS-ALLOWLIST.md                ← Per-task external skill allowlist
-│   ├── START.md                           ← 10 start templates (A–J)
+│   ├── START.md                           ← 12 start templates (A–L)
 │   ├── SUBAGENTS.md                       ← Subagent delegation guide
-│   ├── SYSTEM-STATUS-REPORT.md            ← Audit report (v3.3 resync)
+│   ├── SYSTEM-STATUS-REPORT.md            ← Audit report
 │   ├── TASK-TEMPLATES.md                  ← 6 reusable EPCC task templates
 │   ├── USAGE-LOG.md                       ← Task activation tracker
 │   ├── USER-GUIDE.md                      ← User-facing guide + command reference
 │   └── WORKFLOW.md                        ← EPCC engine + 22 hard rules
 ├── resources/
 │   ├── RESOURCE-INDEX.md                  ← Master index for all resources
-│   ├── cards/                             ← 7 modular resource cards (v3.3)
+│   ├── cards/                             ← 9 shipped resource cards
 │   │   ├── anti-ai-slop-details.md
+│   │   ├── cinematic-landing-lane.md
 │   │   ├── component-logic-spec.md
 │   │   ├── content-architecture.md
 │   │   ├── deliverables-specs.md
 │   │   ├── landing-bg-asset-pipeline.md
 │   │   ├── reference-style-extraction.md
+│   │   ├── technical-cofounder-contract.md
 │   │   └── ui-inspiration-to-lane.md
-│   └── external/
-│       ├── AWESOME-SKILLS.md              ← External skills library reference
-│       ├── AWESOME-SKILLS-BUNDLES.md      ← 7 role-based bundles
-│       ├── AWESOME-SKILLS-WORKFLOWS.md    ← 3 EPCC-mapped playbooks
+│   ├── reference/                         ← Reference source docs
+│   │   └── cinematic-landing-lane-source.md
+│   └── external/                          ← External resources (examples)
+│       ├── AWESOME-SKILLS.md              ← Community skills library reference
+│       ├── AWESOME-SKILLS-BUNDLES.md      ← Role-based bundles
+│       ├── AWESOME-SKILLS-WORKFLOWS.md    ← EPCC-mapped playbooks
 │       ├── EXTERNAL-RESOURCE-REGISTRY.md  ← External resources registry (template)
-│       ├── cards/                         ← 7 external resource cards (examples)
-│       │   ├── phased-build-protocol.md
-│       │   ├── glassmorphism-reference.md
-│       │   ├── design-tokens.md
-│       │   ├── agentic-dev-workflow.md
-│       │   ├── design-system-framework.md
-│       │   ├── design-search-toolkit.md
-│       │   └── structured-debugger.md
-│       └── sources/                       ← Your source snapshots (add your own)
-│           └── README.md
+│       ├── cards/                         ← 7 external example cards
+│       └── sources/                       ← Your source snapshots
 ```
 
 ---

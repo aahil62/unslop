@@ -22,80 +22,159 @@ Each resource entry follows this structure:
 - **Authority level:** `PRIMARY` | `SUPPORT` | `EMERGENCY` | `INSPIRATION`
 ```
 
-### Example Resource Entries
+## Shipped Resource Cards
 
-Below are **example** entries showing the format. Replace or extend these with your own resources.
+> These cards ship with the minimal kit in `resources/cards/`. Each one is a self-contained constraint + output spec.
 
----
+### 1. UI Inspiration → Lane
 
-## 1. `<your-workflow-resource>`
-
-- **What it is:** A foundational operating rulebook that defines how the agent should behave—covering coding style, verification loops, scope control, and success criteria.
-- **When to use it:**
-  - At the start of every new project to establish guardrails
-  - When enforcing coding standards
-  - When defining quick commands
-- **What it produces:** A behavioral contract, verification checklists, quick command definitions
-- **Activation phrase:** `"Load <your-workflow-resource> and enforce them for this session."`
-- **Conflicts / overlaps:** Overlaps with methodology resources on project setup; this file is the *rule set*, methodology is the *guide*. Use both together.
+- **What it is:** Maps reference sites or aesthetic preferences to a locked UI lane with acceptance criteria.
+- **When to use it:** Any UI task where the visual direction is not yet decided.
+- **What it produces:** Lane lock, acceptance criteria, do/don't list, asset pipeline flag.
+- **Activation phrase:** `"Run UI Inspiration → Lane to lock the visual direction."`
+- **Conflicts / overlaps:** If this is PRIMARY for lane selection, cinematic-landing-lane becomes REF-ONLY (and vice versa).
 - **Authority level:** `PRIMARY`
+- **Type:** `CHOICE-HEAVY` — Decision Required: YES
+- **Card file:** `cards/ui-inspiration-to-lane.md`
 
 ---
 
-## 2. `<your-ui-resource>`
+### 2. Content Architecture
 
-- **What it is:** A tactical prompt library of 15+ design refinement prompts covering hero sections, CTAs, navigation, cards, typography, animations, pricing, testimonials, and section transitions.
-- **When to use it:**
-  - When polishing any UI component to premium quality
-  - When a feature is functional but lacks visual impact
-  - When doing final design passes on landing pages or interactive elements
-- **What it produces:** Refined UI components with depth, animation, hierarchy, and premium feel
-- **Activation phrase:** `"Apply <your-ui-resource> polish to this component."`
-- **Conflicts / overlaps:** Overlaps with landing page resources on visual quality; this is *component-level* polish, landing resources are *full-page* systems.
+- **What it is:** Generates page copy, headlines, FAQ, and content structure from voice, goal, and audience inputs.
+- **When to use it:** Landing pages, marketing sites, or any page with significant text content.
+- **What it produces:** Per-page hero copy, feature blocks, testimonials, FAQ, footer, H1/H2 tags.
+- **Activation phrase:** `"Activate Content Architecture as SUPPORT."` or `GENERATE_PAGE_COPY`
+- **Conflicts / overlaps:** Compatible with any landing/UI PRIMARY.
 - **Authority level:** `SUPPORT`
+- **Type:** `CHOICE-HEAVY` — Decision Required: YES
+- **Card file:** `cards/content-architecture.md`
 
 ---
 
-## 3. `<your-methodology-resource>`
+### 3. Deliverables Spec
 
-- **What it is:** A comprehensive agentic coding guide covering the EPCC workflow (Explore → Plan → Code → Commit), context engineering, multi-agent delegation, and parallel development strategies.
-- **When to use it:**
-  - When optimizing agentic coding workflow
-  - When setting up project brain files, custom commands, or hooks
-  - When doing advanced work: multi-agent delegation, parallel branches, external tool integrations
-- **What it produces:** Project brain configurations, custom commands, workflow patterns
-- **Activation phrase:** `"Apply <your-methodology-resource> EPCC workflow for this task."`
-- **Conflicts / overlaps:** Overlaps with workflow resources on behavioral rules; methodology provides the *how*, rules provide the *what*.
+- **What it is:** Defines scope, sitemap, user journeys, component inventory, and performance budgets.
+- **When to use it:** Multi-page product builds, SaaS, or anything needing scope definition before design.
+- **What it produces:** Sitemap, 3 user journeys, component inventory, perf budgets, SEO structure.
+- **Activation phrase:** `"Activate Deliverables Spec as PRIMARY."` or `APPLY_DELIVERABLES_SPEC`
+- **Conflicts / overlaps:** Compatible with any SUPPORT resource.
+- **Authority level:** `SUPPORT` (or PRIMARY for scope-first tasks)
+- **Type:** `CHOICE-HEAVY` — Decision Required: YES
+- **Card file:** `cards/deliverables-specs.md`
+
+---
+
+### 4. Anti-AI-Slop Details
+
+- **What it is:** Polish intensity controller — generates a checklist of 15–20 anti-pattern items for UI quality.
+- **When to use it:** After lane + tokens are locked, before final polish pass.
+- **What it produces:** Polish checklist, numbers sheet, anti-pattern list.
+- **Activation phrase:** `"Run Anti-AI-Slop polish."` or `RUN_ANTI_SLOP_POLISH`
+- **Conflicts / overlaps:** Requires lane to be locked first. Compatible with any PRIMARY.
+- **Authority level:** `SUPPORT`
+- **Type:** `CHOICE-HEAVY` — Decision Required: YES
+- **Card file:** `cards/anti-ai-slop-details.md`
+
+---
+
+### 5. Component Logic Spec
+
+- **What it is:** Generates state machines, data flow specs, and edge case lists for complex UI components.
+- **When to use it:** Filters, search, tables, wizards, forms — any component with non-trivial state.
+- **What it produces:** State machine (text), data flow, error/loading/empty specs, edge cases, React structure.
+- **Activation phrase:** `"Spec this component's logic."` or `SPEC_COMPONENT_LOGIC`
+- **Conflicts / overlaps:** Does not occupy a resource slot (produces specs only).
+- **Authority level:** `REF-ONLY`
+- **Type:** `PROCEDURAL` — Decision Required: YES (light)
+- **Card file:** `cards/component-logic-spec.md`
+
+---
+
+### 6. Landing BG Asset Pipeline
+
+- **What it is:** Custom background asset generation for landing pages (illustrated, photographic, or composite).
+- **When to use it:** When the locked lane requires a custom BG (asset pipeline flag = YES from Gate D).
+- **What it produces:** Background asset specifications and generation workflow.
+- **Activation phrase:** `"Activate Landing BG Asset Pipeline as SUPPORT."`
+- **Conflicts / overlaps:** Conditional — refuses activation if lane's asset pipeline flag is NO.
+- **Authority level:** `SUPPORT` (conditional)
+- **Type:** `CHOICE-HEAVY` — Decision Required: YES (conditional)
+- **Card file:** `cards/landing-bg-asset-pipeline.md`
+
+---
+
+### 7. Reference Style Extraction
+
+- **What it is:** Extracts design tokens, hover behaviors, and component recipes from reference sites or screenshots.
+- **When to use it:** When matching or being inspired by an existing site's visual style.
+- **What it produces:** Style spec, hover behavior, token map, component recipes.
+- **Activation phrase:** `"Extract styles from this reference."` or `EXTRACT_REFERENCE_STYLE`
+- **Conflicts / overlaps:** Does not occupy a resource slot (produces specs only).
+- **Authority level:** `REF-ONLY`
+- **Type:** `CHOICE-HEAVY` — Decision Required: YES
+- **Card file:** `cards/reference-style-extraction.md`
+
+---
+
+### 8. Cinematic Landing Lane
+
+- **What it is:** Preset-driven cinematic landing page builder with 4 aesthetic presets (A–D), GSAP animations, and opinionated component architecture.
+- **When to use it:** User explicitly requests a cinematic or preset-driven landing page.
+- **What it produces:** Complete single-page landing site (React + Tailwind + GSAP), 7 animated component sections.
+- **Activation phrase:** `"Activate cinematic-landing-lane as PRIMARY."`
+- **Conflicts / overlaps:** Only one landing lane may be PRIMARY at a time. Never auto-selected.
 - **Authority level:** `PRIMARY`
+- **Type:** `CHOICE-HEAVY` — Decision Required: YES
+- **Card file:** `cards/cinematic-landing-lane.md`
 
 ---
 
-> **Add more resources below following the same format. Number them sequentially.**
+### 9. Technical Cofounder Contract
+
+- **What it is:** Communication overlay — makes the agent behave like a technical cofounder with check-ins, plain language, and staged delivery.
+- **When to use it:** Vague ideas, early discovery, full product builds, non-technical users.
+- **What it produces:** Clarified scope, decision checkpoints, plain-language rationale, "what I need from you" list.
+- **Activation phrase:** `"Activate technical-cofounder-contract as SUPPORT."` or `COFOUNDER_MODE`
+- **Conflicts / overlaps:** Does not override decision gates; complements them. Always SUPPORT, never PRIMARY.
+- **Authority level:** `SUPPORT`
+- **Type:** `PROCEDURAL` — Decision Required: NO
+- **Card file:** `cards/technical-cofounder-contract.md`
 
 ---
 
 ## Quick Reference Table
 
-| # | Resource | Authority | Best For |
-|---|----------|-----------|----------|
-| 1 | `<your-workflow-resource>` | `PRIMARY` | Session rules, coding standards, verification |
-| 2 | `<your-ui-resource>` | `SUPPORT` | Component-level visual polish |
-| 3 | `<your-methodology-resource>` | `PRIMARY` | Agentic workflow, EPCC, advanced techniques |
-| … | *Add your own* | — | — |
+| # | Resource | Domain | Type | Authority | Decision Required |
+|---|----------|--------|------|-----------|-------------------|
+| 1 | UI Inspiration → Lane | UI-Genre | Choice-heavy | PRIMARY | YES |
+| 2 | Content Architecture | Content | Choice-heavy | SUPPORT | YES |
+| 3 | Deliverables Spec | Product/Arch | Choice-heavy | SUPPORT | YES |
+| 4 | Anti-AI-Slop Details | UI-Polish | Choice-heavy | SUPPORT | YES |
+| 5 | Component Logic Spec | UI+Logic | Procedural | REF-ONLY | YES (light) |
+| 6 | Landing BG Asset Pipeline | Landing | Choice-heavy | SUPPORT | YES (conditional) |
+| 7 | Reference Style Extraction | UI-System | Choice-heavy | REF-ONLY | YES |
+| 8 | Cinematic Landing Lane | Landing/Motion | Choice-heavy | PRIMARY | YES |
+| 9 | Technical Cofounder Contract | Product/Collaboration | Procedural | SUPPORT | NO |
 
 ---
 
 ## 🎯 Which 2 to Activate
 
-Each scenario activates **exactly 2** resources (1 PRIMARY + 1 SUPPORT). A third is loaded as REF-ONLY.
+Each scenario activates **exactly 2** resources (1 PRIMARY + 1 SUPPORT). Others are REF-ONLY.
 
-> **Add your own scenario tables here following this format:**
+> Scenarios using shipped cards:
 
-| Role | Resource | Domain |
-|------|----------|--------|
-| **PRIMARY** | `<your-primary-resource>` | `<domain>` |
-| **SUPPORT** | `<your-support-resource>` | `<domain>` |
-| REF-ONLY | `<your-reference-resource>` | `<domain>` |
+| Scenario | PRIMARY | SUPPORT | REF-ONLY |
+|----------|---------|---------|----------|
+| Landing page (visual direction TBD) | UI Inspiration → Lane | Content Architecture | Anti-AI-Slop Details |
+| Cinematic landing page | Cinematic Landing Lane | Content Architecture | — |
+| Landing with custom BG | UI Inspiration → Lane | Landing BG Asset Pipeline | Content Architecture |
+| Product build (scope-first) | Deliverables Spec | Technical Cofounder Contract | Component Logic Spec |
+| Vague idea → V1 | Deliverables Spec | Technical Cofounder Contract | — |
+| UI polish pass | Anti-AI-Slop Details | Reference Style Extraction | — |
+
+> For dashboard, debugging, reliability, and other domains: add your own resource cards or use the external example cards in `resources/external/cards/`.
 
 ---
 
@@ -115,7 +194,7 @@ Each scenario activates **exactly 2** resources (1 PRIMARY + 1 SUPPORT). A third
 
 ---
 
-## 🩹 SYSTEM PATCH — 2026-02-25
+## 🩹 [LEGACY] SYSTEM PATCH — 2026-02-25
 
 ### Quality Gates (Replaces Numeric Claims)
 
@@ -164,7 +243,7 @@ Resource quality is measured by **pass/fail gates**, not palette counts or price
 
 ---
 
-## 🩹 SYSTEM PATCH (v1.1) — 2026-02-25
+## 🩹 [LEGACY] SYSTEM PATCH (v1.1) — 2026-02-25
 
 ### Domain Tags for Resources
 
@@ -183,7 +262,7 @@ Resource quality is measured by **pass/fail gates**, not palette counts or price
 
 ---
 
-## 🩹 PATCH (v1.2) — 2026-02-25
+## 🩹 [LEGACY] PATCH (v1.2) — 2026-02-25
 
 ### UI Domain Ownership
 
@@ -195,7 +274,7 @@ Resource quality is measured by **pass/fail gates**, not palette counts or price
 
 ---
 
-## 🩹 SYSTEM PATCH (v1.3) — 2026-02-25
+## 🩹 [LEGACY] SYSTEM PATCH (v1.3) — 2026-02-25
 
 ### Which 2 to Activate (Canonical v1.3)
 
@@ -257,7 +336,7 @@ This is consistent with PATCH (v1.2) and confirmed here for canonical clarity.
 
 ---
 
-## 🩹 SYSTEM PATCH (v3) — 2026-02-28
+## 🩹 [LEGACY] SYSTEM PATCH (v3) — 2026-02-28
 
 ### Resource Classification Table
 
@@ -308,7 +387,7 @@ When running Decision Gates, ask questions in **rounds of max 8**. Group by gate
 
 ---
 
-## 🩹 SYSTEM PATCH (v3.1) — External Skills Library — 2026-02-28
+## 🩹 [LEGACY] SYSTEM PATCH (v3.1) — External Skills Library — 2026-02-28
 
 ### External Skills Library Entry
 
@@ -343,7 +422,7 @@ This resource is **never PRIMARY or SUPPORT**. It is always reference-only, with
 
 ---
 
-## 🩹 SYSTEM PATCH (v3.3) — New Resource Cards — 2026-02-28
+## 🩹 [LEGACY] SYSTEM PATCH (v3.3) — New Resource Cards — 2026-02-28
 
 ### Resource Classification Table (v3.3 Additions)
 
@@ -364,3 +443,60 @@ This resource is **never PRIMARY or SUPPORT**. It is always reference-only, with
 - **v3.3-3 (Component Logic Spec)** and **v3.3-6 (Reference Style Extraction)** produce specs but don't occupy resource slots when used via their prompt macro commands.
 - All CHOICE-HEAVY cards have embedded decision gates (see each card's 🚦 section). These gates are part of Gates D/E/F depending on domain.
 - **Max-2 active resources** still applies. If a card can't be SUPPORT, it becomes REF-ONLY but its key outputs still appear in the Decision Report.
+
+---
+
+## 🩹 [LEGACY] SYSTEM PATCH (v3.5) — Cinematic Landing Lane — 2026-03-01
+
+### Resource Classification Table (v3.5 Addition)
+
+| # | Resource | Type | Domain(s) | Authority | Decision Required | Required Inputs | Card File |
+|---|----------|------|-----------|-----------|-------------------|-----------------|-----------|
+| v3.5-1 | Cinematic Landing Lane | `CHOICE-HEAVY` | Landing / UI-System / Motion | PRIMARY | YES | Preset A–D, stack confirmation, motion level, reduced-motion stance, acceptance criteria (3–5) | `cards/cinematic-landing-lane.md` |
+
+### Source Reference File (v3.5)
+
+| File | Location | Purpose |
+|------|----------|---------|
+| Cinematic Landing Lane Source | `resources/reference/cinematic-landing-lane-source.md` | Canonical source text for cinematic presets, component architecture, and design system rules. Referenced by the adapter card — never modified. |
+
+### Decision Gate Mapping (v3.5 Addition)
+
+| Domain | Gates Triggered | Choice-Heavy Resources |
+|--------|-----------------|----------------------|
+| Cinematic Landing | D (cinematic preset flow) + F + G | Cinematic Landing Lane |
+
+### Key Rules for v3.5
+
+- **Never auto-selected.** The cinematic landing lane must be explicitly activated by the user (via Template K or activation phrase).
+- **Conflicts with other landing PRIMARYs.** Only one landing lane may be PRIMARY at a time. If cinematic-landing-lane is PRIMARY, Landing-Page-System and UI Inspiration → Lane become REF-ONLY.
+- **Max-2 active resources** still applies. Recommended pairing: PRIMARY cinematic-landing-lane + SUPPORT content-architecture or ui-system-tokens.
+
+---
+
+## 🩹 [LEGACY] SYSTEM PATCH (v0.1.2) — Technical Cofounder Contract — 2026-03-01
+
+### Resource Classification Table (v0.1.2 Addition)
+
+| # | Resource | Type | Domain(s) | Authority | Decision Required | Required Inputs | Card File |
+|---|----------|------|-----------|-----------|-------------------|-----------------|-----------|
+| v0.1.2-1 | Technical Cofounder Contract | `PROCEDURAL` | Product / Collaboration | SUPPORT | NO | — | `cards/technical-cofounder-contract.md` |
+
+### Key Rules for v0.1.2
+
+- **Behavior overlay, not a workflow.** Does not add new Decision Gates or replace EPCC.
+- **Always SUPPORT.** Never PRIMARY. Compatible with any PRIMARY resource.
+- **Modifies communication tone** within existing gates: plain language, decision check-ins, assumption challenging, staged delivery.
+- **Max-2 active resources** still applies. Recommended pairing: any task-appropriate PRIMARY + SUPPORT technical-cofounder-contract.
+
+---
+
+## 🔒 CANONICAL (KIT_VERSION v0.2.2)
+
+This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `../VERSIONING.md`. 
+If any older section contradicts this block or the core principles of v0.2.2, treat the older section as deprecated.
+
+**RESOURCE-INDEX.md Invariants:**
+- **Max-2 Active:** Exactly 1 PRIMARY + 1 SUPPORT. All others are REF-ONLY.
+- **Decision Required:** Choice-Heavy resources mandate Decision Gates before PLAN.
+- **Procedural:** Procedural resources do not require gates, but still follow EPCC.

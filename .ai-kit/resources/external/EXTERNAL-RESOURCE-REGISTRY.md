@@ -33,12 +33,12 @@
 
 ---
 
-### 🩹 PATCH (v1.2) — 2026-02-25
+### 🩹 [LEGACY] PATCH (v1.2) — 2026-02-25
 
 **UI-System authority:** When two UI-System candidates exist and both claim PRIMARY, the agent must ask the user which one remains PRIMARY. **Only one PRIMARY per Domain is allowed at any time.** The demoted resource becomes SUPPORT or REF-ONLY at the user's choice.
 
 ---
 
-### 🩹 SYSTEM PATCH (v1.3) — 2026-02-25
+### 🩹 [LEGACY] SYSTEM PATCH (v1.3) — 2026-02-25
 
 **Conflict Rule:** If another UI-System candidate is activated as PRIMARY, the agent must ask the user which one remains PRIMARY. **Only one PRIMARY per Domain is allowed at any time.** The demoted resource becomes SUPPORT or REF-ONLY at the user's choice.

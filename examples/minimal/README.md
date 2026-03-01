@@ -30,29 +30,29 @@ From there, the EPCC workflow takes over:
 - **Verify** — run lint, build, tests
 - **Audit** — quality checklist and final polish
 
-## Example: Building a Dashboard
+## Example: Landing Page Build
 
 ```
 Read .ai-kit/AGENTS.md and .ai-kit/resources/RESOURCE-INDEX.md.
 Use EPCC workflow from .ai-kit/prompts/WORKFLOW.md.
 
 Activate:
-  PRIMARY: Dashboard-IA (Dashboard)
-  SUPPORT: UI-System-Specs (UI-System)
+  PRIMARY: UI Inspiration → Lane (cards/ui-inspiration-to-lane.md)
+  SUPPORT: Content Architecture (cards/content-architecture.md)
 
 SHOW_ACTIVE_RESOURCES
 Begin EXPLORE. Do not plan or code yet.
 ```
 
-## Example: Debugging a Bug
+## Example: Vague Idea → V1 Build (Cofounder Mode)
 
 ```
 Read .ai-kit/AGENTS.md and .ai-kit/resources/RESOURCE-INDEX.md.
 Use EPCC workflow from .ai-kit/prompts/WORKFLOW.md.
 
 Activate:
-  PRIMARY: Debugging-Protocol (Debugging)
-  SUPPORT: Reliability-Patterns (Reliability)
+  PRIMARY: Deliverables Spec (cards/deliverables-specs.md)
+  SUPPORT: Technical Cofounder Contract (cards/technical-cofounder-contract.md)
 
 SHOW_ACTIVE_RESOURCES
 Begin EXPLORE. Do not plan or code yet.

@@ -134,7 +134,7 @@
 
 ---
 
-## 🩹 SYSTEM PATCH (v3.1) — External Skills Allowlist — 2026-02-28
+## 🩹 [LEGACY] SYSTEM PATCH (v3.1) — External Skills Allowlist — 2026-02-28
 
 ### External Skills Allowlist
 

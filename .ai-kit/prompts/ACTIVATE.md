@@ -6,7 +6,9 @@
 
 ---
 
-## PRIMARY Resources
+## EXTENSIONS — PRIMARY Resources (not shipped in minimal kit)
+
+> The following activation phrases reference resources you must provide yourself. Create your own cards in `resources/cards/` and register them in `RESOURCE-INDEX.md`. See the shipped cards (below) and `external/cards/` for examples.
 
 ### Session-Rules
 ```
@@ -40,7 +42,7 @@ Generate a Project-Template context file for this codebase.
 
 ---
 
-## SUPPORT Resources
+## EXTENSIONS — SUPPORT Resources (not shipped in minimal kit)
 
 ### Dashboard-Architecture
 ```
@@ -74,7 +76,7 @@ Create a new skill using Skills-Creator standards.
 
 ---
 
-## EMERGENCY Resources
+## EXTENSIONS — EMERGENCY Resources (not shipped in minimal kit)
 
 ### Error-Handling-Patterns
 ```
@@ -84,7 +86,7 @@ Apply Error-Handling-Patterns for resilient error management.
 
 ---
 
-## INSPIRATION Resources
+## EXTENSIONS — INSPIRATION Resources (not shipped in minimal kit)
 
 ### Landing-Page-System
 ```
@@ -94,27 +96,9 @@ Build this as a Premium-Website with scrollytelling animation.
 
 ---
 
-## 🔥 Combo Activations
+## 🔥 Combo Activations (DEPRECATED)
 
-### Dashboard Build (3 resources)
-```
-Activate dashboard build: Dashboard-Architecture + Design-Elements + Session-Rules.
-```
-
-### Premium Landing Page (3 resources)
-```
-Activate landing page build: Landing-Page-System + Design-Elements + Scaffold-Builder.
-```
-
-### Debug Mode (3 resources)
-```
-Activate debug mode: Error-Handling-Patterns + Dev-Workflow + Session-Rules.
-```
-
-### Ship Mode (3 resources)
-```
-Activate ship mode: Design-Elements + Session-Rules + Dev-Workflow.
-```
+> **Deprecated in v1.1, fully removed in v1.3.** These combos listed 3 resources, violating max-2. Use START.md templates instead — each activates exactly 2 resources.
 
 ---
 
@@ -194,7 +178,7 @@ RECOMMEND_RESOURCES_FOR_TASK
 
 ---
 
-## 🩹 SYSTEM PATCH — 2026-02-25
+## 🩹 [LEGACY] SYSTEM PATCH — 2026-02-25
 
 ### Mandatory: Active Resources Banner
 Every response MUST begin with this exact block before any other content:
@@ -235,7 +219,7 @@ If a design resource is activated but no artifacts are produced before entering 
 
 ---
 
-## 🩹 SYSTEM PATCH (v1.1) — 2026-02-25
+## 🩹 [LEGACY] SYSTEM PATCH (v1.1) — 2026-02-25
 
 ### Combo Activation Deprecation
 The "🔥 Combo Activations" section above (Dashboard Build, Premium Landing Page, Debug Mode, Ship Mode) is **deprecated**. Those combos list 3 resources, which violates Rule 4 (max 2 active).
@@ -269,7 +253,7 @@ When the user types `SHOW_ACTIVE_RESOURCES`, print this exact format:
 
 ---
 
-## 🩹 PATCH: Engine Semantics (v1.2) — 2026-02-25
+## 🩹 [LEGACY] PATCH: Engine Semantics (v1.2) — 2026-02-25
 
 ### Canonical Banner Format
 This supersedes all prior banner definitions. Every response must begin with:
@@ -295,7 +279,7 @@ This supersedes all prior banner definitions. Every response must begin with:
 
 ---
 
-## 🩹 SYSTEM PATCH (v1.3) — 2026-02-25
+## 🩹 [LEGACY] SYSTEM PATCH (v1.3) — 2026-02-25
 
 ### Combo Activation Deprecation (Full)
 All entries in the "🔥 Combo Activations" section (lines 97–118) and the v1.1 interactive-fallback behavior are **fully deprecated**. They listed 3 active resources, which violated the max-2 rule. Do NOT activate any combo that names 3+ active resources, even interactively.
@@ -373,7 +357,7 @@ If the user requests 3+ ACTIVE resources in a single activation:
 
 ---
 
-## 🩹 SYSTEM PATCH (v1.4) — 2026-02-25
+## 🩹 [LEGACY] SYSTEM PATCH (v1.4) — 2026-02-25
 
 ### Governor Mode: Start Menu Commands
 
@@ -381,7 +365,7 @@ If the user requests 3+ ACTIVE resources in a single activation:
 ```
 START_MENU
 ```
-**Effect:** Opens `.ai-kit/prompts/START.md` and presents the 8 templates (A–H) for the user to select. The agent reads `AGENTS.md` + `RESOURCE-INDEX.md`, activates the template's 2 resources, prints `SHOW_ACTIVE_RESOURCES`, and begins EXPLORE.
+**Effect:** Opens `.ai-kit/prompts/START.md` and presents the 12 templates (A–L) for the user to select. The agent reads `AGENTS.md` + `RESOURCE-INDEX.md`, activates the template's 2 resources, prints `SHOW_ACTIVE_RESOURCES`, and begins EXPLORE.
 
 ---
 
@@ -389,11 +373,11 @@ START_MENU
 ```
 START_RECOMMEND
 ```
-**Effect:** Analyzes the current task context and recommends one template ID (A–H) from `.ai-kit/prompts/START.md`. Prints the template name, PRIMARY, SUPPORT, and a one-sentence rationale. Waits for user confirmation before activating.
+**Effect:** Analyzes the current task context and recommends one template ID (A–L) from `.ai-kit/prompts/START.md`. Prints the template name, PRIMARY, SUPPORT, and a one-sentence rationale. Waits for user confirmation before activating.
 
 ---
 
-## 🩹 SYSTEM PATCH (v3) — Decision Gates Commands — 2026-02-28
+## 🩹 [LEGACY] SYSTEM PATCH (v3) — Decision Gates Commands — 2026-02-28
 
 ### Decision Gates Are Workflow Logic
 
@@ -460,7 +444,7 @@ If the user asks to build, code, or implement on a decision-heavy task (detected
 
 ---
 
-## 🩹 SYSTEM PATCH (v3.1) — External Skills Commands — 2026-02-28
+## 🩹 [LEGACY] SYSTEM PATCH (v3.1) — External Skills Commands — 2026-02-28
 
 ### External Skills Are Workflow Logic
 
@@ -526,7 +510,7 @@ If the agent attempts to invoke an external skill that is NOT in the locked allo
 
 ---
 
-## 🩹 SYSTEM PATCH (v3.2) — Subagents, Lessons, Templates — 2026-02-28
+## 🩹 [LEGACY] SYSTEM PATCH (v3.2) — Subagents, Lessons, Templates — 2026-02-28
 
 ### Subagents, Lessons, and Templates Are Workflow Logic
 
@@ -592,7 +576,7 @@ After the user selects a template, the agent copies it and fills in the task-spe
 
 ---
 
-## 🩹 SYSTEM PATCH (v3.3) — Prompt Macro Commands — 2026-02-28
+## 🩹 [LEGACY] SYSTEM PATCH (v3.3) — Prompt Macro Commands — 2026-02-28
 
 ### Prompt Macros Are Workflow Logic
 
@@ -660,3 +644,44 @@ EXTRACT_REFERENCE_STYLE
 **Prerequisite:** Reference source (URL, screenshot, or description) must be provided.
 **Resource slot:** REF-ONLY (does not occupy a slot — produces specs).
 **Refuses:** If no reference provided: `⚠️ Cannot extract styles — provide a reference URL, screenshot, or description first.`
+
+---
+
+## 🩹 [LEGACY] SYSTEM PATCH (v0.1.2) — Cofounder Mode — 2026-03-01
+
+### Cofounder Mode Is a Communication Overlay
+
+The cofounder contract modifies agent tone and check-in cadence. It is **not** a workflow engine and does **not** add new Decision Gates. EPCC remains the engine. PRIMARY + SUPPORT remain max-2.
+
+---
+
+### COFOUNDER_MODE
+```
+COFOUNDER_MODE
+```
+**Effect:** Activates `cards/technical-cofounder-contract.md` as SUPPORT. Modifies agent behavior:
+- Treat user as **product owner** — check in before major decisions, don't guess
+- Use **plain language** — explain technical choices in 1–2 non-jargon sentences
+- **Challenge assumptions** — push back on overcomplication, separate must-have from later
+- **Staged delivery** — break large builds into demonstrable stages
+- Surface **"what I need from you"** lists proactively
+
+**Resource slot:** Activates as SUPPORT. If SUPPORT slot is already occupied:
+1. Print: `⚠️ SUPPORT slot occupied by [current SUPPORT]. Swap to technical-cofounder-contract? (yes/no)`
+2. Wait for user confirmation before swapping.
+3. Previous SUPPORT becomes REF-ONLY.
+
+**Complements:** All Decision Gates (A–H). Does not override or replace them.
+
+---
+
+## 🔒 CANONICAL (KIT_VERSION v0.2.2)
+
+This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `.ai-kit/VERSIONING.md`. 
+If any older section contradicts this block or the core principles of v0.2.2, treat the older section as deprecated.
+
+**ACTIVATE.md Invariants:**
+- **Max-2 Active:** Commands requesting 3+ active resources must be refused and ask the user to pick 2.
+- **Always Banner:** Every response must begin with the 7-line banner (`PRIMARY`, `SUPPORT`, `ENGINE`, `STEP`, `PHASE`, `SCOPE`, `REF-ONLY`).
+- **Engine:** `ENGINE` in the banner is always EPCC.
+

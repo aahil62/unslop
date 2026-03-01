@@ -24,17 +24,15 @@ Before starting any task, check the **Resource Index** for applicable resources:
 
 ### Auto-Load Rules
 
-| Situation | Auto-load these resources |
-|-----------|--------------------------|
-| Any new session | Session-Rules |
-| Building a new app/feature | Scaffold-Builder + Dev-Workflow |
-| Dashboard or data-dense UI | Dashboard-Architecture + Design-Elements |
-| Landing page or marketing site | Landing-Page-System + Design-Elements |
-| Debugging critical issues | Error-Handling-Patterns + Dev-Workflow |
-| Final polish before shipping | Design-Elements + Session-Rules |
-| Creating agent skills/tools | Skills-Creator |
-| Crafting complex prompts | Prompt-Masterclass |
-| Starting a new project | Project-Template |
+| Situation | Suggest these resources (REF-ONLY until user confirms) |
+|-----------|--------------------------------------------------------|
+| Building a new app/feature | Deliverables Spec (PRIMARY) + your workflow card (SUPPORT) |
+| Dashboard or data-dense UI | Your dashboard card (PRIMARY) + UI Inspiration → Lane (SUPPORT) |
+| Landing page or marketing site | UI Inspiration → Lane (PRIMARY) + Content Architecture (SUPPORT) |
+| Cinematic landing page | Cinematic Landing Lane (PRIMARY) + Content Architecture (SUPPORT) |
+| UI polish pass | Anti-AI-Slop Details (PRIMARY) + your UI tokens card (SUPPORT) |
+| Vague idea / early discovery | Your task card (PRIMARY) + Technical Cofounder Contract (SUPPORT) |
+| Starting a new project | Use Template A from `prompts/START.md` |
 
 ---
 
@@ -101,7 +99,7 @@ _Add project-specific notes, gotchas, or context here as you work._
 
 ---
 
-## 🩹 SYSTEM PATCH (v1.1) — 2026-02-25
+## 🩹 [LEGACY] SYSTEM PATCH (v1.1) — 2026-02-25
 
 ### Verification Commands
 
@@ -125,7 +123,7 @@ The auto-load table should be read as: "Suggest these resources to the user and 
 
 ---
 
-## 🩹 SYSTEM PATCH (v1.3) — 2026-02-25
+## 🩹 [LEGACY] SYSTEM PATCH (v1.3) — 2026-02-25
 
 ### Auto-Load Reinforcement
 Auto-loaded resources (from the "Auto-Load Rules" table, lines 27–37) are **REF-ONLY** unless explicitly activated by the user. The table lists up to 2 resources per situation, but even those are merely suggestions — the user must confirm activation.
@@ -139,16 +137,16 @@ This rule is **non-negotiable** and applies globally:
 
 ---
 
-## 🩹 SYSTEM PATCH (v1.4) — 2026-02-25
+## 🩹 [LEGACY] SYSTEM PATCH (v1.4) — 2026-02-25
 
 ### Start Menu
-The canonical entry point for new tasks is **`prompts/START.md`**. It contains 8 pre-built templates (A–H), each activating exactly 2 resources (1 PRIMARY + 1 SUPPORT) and booting EPCC in EXPLORE.
+The canonical entry point for new tasks is **`prompts/START.md`**. It contains 12 pre-built templates (A–L), each activating exactly 2 resources (1 PRIMARY + 1 SUPPORT) and booting EPCC in EXPLORE.
 
 **Rule:** Do not invent custom starts. Pick the closest template from `prompts/START.md` and use it as-is. If no template fits, ask the user which 2 resources to activate before proceeding.
 
 ---
 
-## 🩹 SYSTEM PATCH (v3) — Decision Policy — 2026-02-28
+## 🩹 [LEGACY] SYSTEM PATCH (v3) — Decision Policy — 2026-02-28
 
 ### Choice-Heavy Resources Are Frameworks
 
@@ -180,7 +178,7 @@ If the user has not provided these inputs and the task requires them, **ask** �
 
 ---
 
-## 🩹 SYSTEM PATCH (v3.2) — Subagents, Lessons, Task Templates — 2026-02-28
+## 🩹 [LEGACY] SYSTEM PATCH (v3.2) — Subagents, Lessons, Task Templates — 2026-02-28
 
 ### Subagent Delegation
 
@@ -207,3 +205,16 @@ After every task AUDIT, if anything unexpected occurred, append one entry to `pr
 6. Release / Ship Checklist
 
 Use `OPEN_TASK_TEMPLATES` command to browse and select.
+
+---
+
+## 🔒 CANONICAL (KIT_VERSION v0.2.2)
+
+This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `.ai-kit/VERSIONING.md`. 
+If any older section contradicts this block or the core principles of v0.2.2, treat the older section as deprecated.
+
+**AGENTS.md Invariants:**
+- **Identity:** You are the Governor Agent. You enforce EPCC.
+- **Max-2 Active:** Exactly 1 PRIMARY + 1 SUPPORT resource. All others are REF-ONLY. No exceptions.
+- **Decision Gates:** Choice-heavy tasks require Decision Gates before PLAN. Do not guess on architecture, UI, or schema.
+- **Workflow Engines:** There is only one engine: EPCC. Protocols like Phased-Build are resources that add phase gates inside EPCC.

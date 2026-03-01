@@ -164,7 +164,7 @@ Workflow step: EXPLORE / PLAN / CODE / VERIFY / AUDIT
 
 ---
 
-## 🩹 SYSTEM PATCH — 2026-02-25
+## 🩹 [LEGACY] SYSTEM PATCH — 2026-02-25
 
 ### Rule 6: Exactly 1 Workflow Engine Per Task
 Three workflow engines exist. **Pick exactly one per task. They are mutually exclusive.**
@@ -185,7 +185,7 @@ Three workflow engines exist. **Pick exactly one per task. They are mutually exc
 
 ---
 
-## 🩹 PATCH: Engine Semantics (v1.2) — 2026-02-25
+## 🩹 [LEGACY] PATCH: Engine Semantics (v1.2) — 2026-02-25
 
 ### Definitions
 
@@ -210,7 +210,7 @@ The banner must always show `ENGINE: EPCC`. If a workflow protocol is active as 
 
 ---
 
-## 🩹 SYSTEM PATCH (v1.3) — 2026-02-25
+## 🩹 [LEGACY] SYSTEM PATCH (v1.3) — 2026-02-25
 
 ### Terminology Resolution: ENGINE vs WORKFLOW PROTOCOL
 
@@ -234,7 +234,7 @@ When we say "choose one engine" (Rule 6, lines 169–178), we mean: **choose at 
 
 ---
 
-## 🩹 SYSTEM PATCH (v3) — Decision Gates Enforcement — 2026-02-28
+## 🩹 [LEGACY] SYSTEM PATCH (v3) — Decision Gates Enforcement — 2026-02-28
 
 ### Rule 9: Decision Gates Before PLAN
 
@@ -280,7 +280,7 @@ The **only** way to skip Decision Gates is the exact phrase: `"INPUTS ARE FIXED,
 
 ---
 
-## 🩹 SYSTEM PATCH (v3.1) — External Skills Enforcement — 2026-02-28
+## 🩹 [LEGACY] SYSTEM PATCH (v3.1) — External Skills Enforcement — 2026-02-28
 
 ### Rule 16: External Skills Are REF-ONLY Unless Allowlisted
 
@@ -303,7 +303,7 @@ Never invoke an external skill with `risk: unknown` or `risk: high` (per `skills
 
 ---
 
-## 🩹 SYSTEM PATCH (v3.2) — Subagents, Lessons, Task Discipline — 2026-02-28
+## 🩹 [LEGACY] SYSTEM PATCH (v3.2) — Subagents, Lessons, Task Discipline — 2026-02-28
 
 ### Rule 18: Lessons Capture After AUDIT
 
@@ -343,7 +343,7 @@ For tasks meeting subagent criteria (see `prompts/SUBAGENTS.md`):
 
 ---
 
-## 🩹 SYSTEM PATCH (v3.3) — UI Lane + Anti-Slop Rules — 2026-02-28
+## 🩹 [LEGACY] SYSTEM PATCH (v3.3) — UI Lane + Anti-Slop Rules — 2026-02-28
 
 ### Rule 21: UI Lane Must Be Locked Before PLAN
 
@@ -362,3 +362,26 @@ For any task that produces visible UI (landing, dashboard, component, page):
 2. Polish intensity (Low/Med/High) must be locked via its decision gate before AUDIT.
 3. Checklist items are pass/fail — failures must be fixed before task completion.
 4. If no anti-slop intensity was selected, default to **Medium** and note the default in the Decision Report.
+
+---
+
+---
+
+## 🩹 [LEGACY] SYSTEM PATCH (v0.2.1) — WORKFLOW Polish Alignment — 2026-03-01
+
+**Override for Phase 5 (Polish):**
+The instruction "Apply Design-Elements refinements if UI is involved" references an EXTENSION card.
+- For minimal kit users: if UI work is involved, use `cards/anti-ai-slop-details.md` as the Polish checklist.
+- Keep max-2 active resources: if a SUPPORT is already active, treat `anti-ai-slop-details.md` as REF-ONLY and still apply its checklist during the Polish phase.
+
+## 🔒 CANONICAL (KIT_VERSION v0.2.2)
+
+This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `.ai-kit/VERSIONING.md`. 
+If any older section contradicts this block or the core principles of v0.2.2, treat the older section as deprecated.
+
+**WORKFLOW.md Invariants:**
+- **The Engine:** EPCC (Explore → Plan → Code → Check → Polish → Ship) is the only engine.
+- **Rule 1:** No coding before PLAN.
+- **Rule 2:** Only modify files listed in PLAN.
+- **Rule 9:** Decision Gates before PLAN for choice-heavy tasks.
+- **Rule 10:** Decision Report required before PLAN.

@@ -175,7 +175,7 @@ Begin EXPLORE. Do not plan or code yet.
 
 ---
 
-## 🩹 SYSTEM PATCH (v3.3) — New Start Templates — 2026-02-28
+## 🩹 [LEGACY] SYSTEM PATCH (v3.3) — New Start Templates — 2026-02-28
 
 ## I) Landing (Illustrated BG Lane)
 
@@ -225,3 +225,110 @@ then GENERATE_PAGE_COPY for content. Do not plan or code yet.
 | J | Landing Copy + Deliverables | Deliverables Spec | Content Architecture |
 
 > **Rule:** Templates I and J follow the same max-2 ACTIVE resource rule. Template I has a guard that refuses activation if the lane doesn't require BG assets.
+
+---
+
+## 🩹 [LEGACY] SYSTEM PATCH (v3.5) — Cinematic Landing Template — 2026-03-01
+
+## K) Cinematic Landing
+
+> **Use when:** Building a preset-driven, high-fidelity cinematic landing page with GSAP scroll animations and opinionated component architecture. **Must be explicitly selected — never auto-detected.**
+
+```
+Read .ai-kit/AGENTS.md and .ai-kit/resources/RESOURCE-INDEX.md.
+Use EPCC workflow from .ai-kit/prompts/WORKFLOW.md.
+
+Activate:
+  PRIMARY: Cinematic Landing Lane (cards/cinematic-landing-lane.md)
+  SUPPORT: Content Architecture (cards/content-architecture.md)
+  — OR —
+  SUPPORT: Design Tokens (UI-System)
+
+SHOW_ACTIVE_RESOURCES
+Begin EXPLORE. Run decision gates (preset A–D, stack, motion level,
+reduced-motion, acceptance criteria). Produce Decision Report.
+LOCK_DECISIONS. Then proceed to PLAN.
+```
+
+**Guard:** This template is never auto-selected from keywords. The user must explicitly choose Template K or say `"Activate cinematic-landing-lane as PRIMARY."`. If the user just says "landing page" without mentioning cinematic, use Template D instead.
+
+---
+
+### Quick Reference Update (v3.5)
+
+| ID | Name | PRIMARY | SUPPORT |
+|----|------|---------|---------|
+| K | Cinematic Landing | Cinematic Landing Lane | Content Architecture (or Design Tokens) |
+
+> **Rule:** Template K follows the same max-2 ACTIVE resource rule. Only one landing lane may be PRIMARY at a time — activating K makes Templates D and I REF-ONLY.
+
+---
+
+## 🩹 [LEGACY] SYSTEM PATCH (v0.1.2) — Cofounder Mode Template — 2026-03-01
+
+## L) Cofounder Mode (Idea → V1 Build)
+
+> **Use when:** The user has a vague idea, wants a thinking partner, or needs plain-language explanations and decision check-ins throughout a full product build.
+
+```
+Read .ai-kit/AGENTS.md and .ai-kit/resources/RESOURCE-INDEX.md.
+Use EPCC workflow from .ai-kit/prompts/WORKFLOW.md.
+
+Activate:
+  PRIMARY: (choose based on task)
+    — Deliverables Spec (cards/deliverables-specs.md) for product builds
+    — UI Inspiration → Lane (cards/ui-inspiration-to-lane.md) for design-first builds
+    — Cinematic Landing Lane (cards/cinematic-landing-lane.md) for cinematic landings
+    — Or any other shipped card matching the task domain
+  SUPPORT: Technical Cofounder Contract (cards/technical-cofounder-contract.md)
+
+SHOW_ACTIVE_RESOURCES
+Begin EXPLORE. Challenge assumptions, define V1 scope,
+then RUN_DECISION_GATES. Do not plan or code yet.
+```
+
+**Behavior:** The cofounder contract overlay makes the agent:
+- Treat the user as product owner — check in at every decision point
+- Explain technical choices in plain language
+- Push back on overcomplication
+- Break the build into staged deliverables
+
+---
+
+### Quick Reference Update (v0.1.2)
+
+| ID | Name | PRIMARY | SUPPORT |
+|----|------|---------|---------|
+| L | Cofounder Mode | (task-appropriate card) | Technical Cofounder Contract |
+
+> **Rule:** Template L follows the same max-2 ACTIVE resource rule. PRIMARY is chosen based on task domain. The cofounder contract is always SUPPORT.
+
+---
+
+---
+
+## 🩹 [LEGACY] SYSTEM PATCH (v0.2.1) — START Templates Alignment — 2026-03-01
+
+**Override for Templates A–H:**
+Templates A–H are LEGACY/EXTENSION examples and may reference non-shipped cards (e.g., `Project-Template`, `Dashboard-Architecture`, `Design Tokens`).
+- If you have these external cards, Templates A–H function as written.
+- If you do NOT have them, DO NOT use Templates A–H.
+- For minimal kit users: Prefer the MINIMAL templates (if present) or those introduced in recent patches.
+- Otherwise, pick exactly 1 PRIMARY + 1 SUPPORT from `.ai-kit/resources/RESOURCE-INDEX.md` (see the "Which 2 to Activate" table) and proceed with the EPCC engine.
+
+---
+
+## 🩹 SYSTEM PATCH (v0.2.2) — Minimal Kit Pointer — 2026-03-01
+For minimal-kit users, the canonical path is:
+- Open `.ai-kit/resources/RESOURCE-INDEX.md` and use **"Which 2 to Activate"** (Canonical) to choose exactly 1 PRIMARY + 1 SUPPORT.
+- Then follow EPCC: EXPLORE → RUN_DECISION_GATES (if triggered) → Decision Report → LOCK_DECISIONS → PLAN → CODE → VERIFY → AUDIT.
+
+## 🔒 CANONICAL (KIT_VERSION v0.2.2)
+
+This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `.ai-kit/VERSIONING.md`. 
+If any older section contradicts this block or the core principles of v0.2.2, treat the older section as deprecated.
+
+**START.md Invariants:**
+- **Entry Point:** Always use templates from this file to start tasks.
+- **Exactly 2:** Every template boots with exactly 1 PRIMARY + 1 SUPPORT.
+- **No Planning:** START templates exist to load context and begin EXPLORE. Do not plan or code yet.

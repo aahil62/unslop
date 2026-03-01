@@ -50,7 +50,7 @@ Keep a structured decisions table with columns: Decision, Rationale, Date. This 
 
 ---
 
-## 🩹 PATCH: UI-System PRIMARY (v1.2) — 2026-02-25
+## 🩹 [LEGACY] PATCH: UI-System PRIMARY (v1.2) — 2026-02-25
 
 **Authority Level Override:** `PRIMARY` for Domain: **UI-System**
 

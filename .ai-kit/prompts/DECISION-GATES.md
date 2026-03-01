@@ -546,7 +546,7 @@ Proceeding to PLAN.
 
 ---
 
-## 🩹 SYSTEM PATCH (v3.1) — Skill Selection Gate — 2026-02-28
+## 🩹 [LEGACY] SYSTEM PATCH (v3.1) — Skill Selection Gate — 2026-02-28
 
 ### Gate H: Skill Selection Gate
 
@@ -593,7 +593,7 @@ The following row is added to the Decision Trigger Heuristics table:
 
 ---
 
-## 🩹 SYSTEM PATCH (v3.2) — Non-Trivial Task Heuristic — 2026-02-28
+## 🩹 [LEGACY] SYSTEM PATCH (v3.2) — Non-Trivial Task Heuristic — 2026-02-28
 
 ### Complexity-Based Plan Trigger
 
@@ -609,7 +609,7 @@ This catches tasks that are complex but don't match existing keyword heuristics 
 
 ---
 
-## 🩹 SYSTEM PATCH (v3.3) — Gate Extensions for UI, Content, and Specs — 2026-02-28
+## 🩹 [LEGACY] SYSTEM PATCH (v3.3) — Gate Extensions for UI, Content, and Specs — 2026-02-28
 
 ### Gate D Extension: Inspiration Selection (v3.3)
 
@@ -665,3 +665,59 @@ For product builds (detected by: SaaS, app, product, platform, marketplace):
 | Content | copy, headline, CTA, testimonial, FAQ, content, tagline | Content architecture gate |
 | Component Logic | filter, search, table, wizard, form, state, pagination | Component logic spec gate |
 | Style Extraction | "match this", reference, "look like", extract style, button style | Reference style extraction gate |
+
+---
+
+## 🩹 [LEGACY] SYSTEM PATCH (v3.5) — Cinematic Landing Lane — 2026-03-01
+
+### Gate D Extension: Cinematic Landing Lane Option (v3.5)
+
+When Gate D (UI Genre + Aesthetic Lane) triggers and the user explicitly selects the **Cinematic Landing Lane** (via Template K or activation phrase), the standard lane selection (Glassmorphism Dark / Soft UI / Aurora UI / etc.) is **replaced** by the cinematic preset selection:
+
+1. **Preset Selection (A–D)** — Present all four presets from `cards/cinematic-landing-lane.md` source:
+   - **A) Organic Tech** — Clinical boutique; moss/clay/cream palette; Plus Jakarta Sans + Cormorant Garamond
+   - **B) Midnight Luxe** — Dark editorial; obsidian/champagne/ivory palette; Inter + Playfair Display
+   - **C) Brutalist Signal** — Raw precision; paper/signal-red palette; Space Grotesk + DM Serif Display
+   - **D) Vapor Clinic** — Neon biotech; deep void/plasma palette; Sora + Instrument Serif
+   User must pick exactly one.
+
+2. **Stack Confirmation** — Default: React 19 + Tailwind v3.4.17 + GSAP 3 + Lucide React. User may override.
+
+3. **Motion Level** — Default: High (source mandates cinematic scroll animations). User may downgrade to Med or Low.
+
+4. **`prefers-reduced-motion` stance** — Options: disable all motion / fade-only fallback / keep subtle.
+
+5. **Acceptance Criteria (3–5 checks)** — Derived from selected preset + fixed design system. Must include at minimum:
+   - Noise overlay at 0.05 opacity
+   - Hero typography matches preset's line pattern
+   - All seven component sections (A–G) present and functional
+   - GSAP ScrollTrigger stacking cards pin correctly
+   - Magnetic button hover effect active
+
+**Outputs (written to DECISIONS-LOCKED.md):**
+- Selected preset (letter + name)
+- Confirmed stack
+- Motion level + reduced-motion policy
+- Acceptance criteria list (3–5 items)
+
+**Rule:** The agent **must not** proceed to PLAN or CODE until the Decision Report exists containing these outputs. This follows the existing v3 rule — no new behavior, just a new lane option within Gate D.
+
+### v3.5 Trigger Heuristics Addition
+
+| Domain | Trigger Keywords | Gates / Actions |
+|--------|-----------------|-----------------|
+| Cinematic Landing | cinematic, cinematic landing, preset A–D, "cinematic landing lane" | D (cinematic preset flow) + F (motion) + G (verification) |
+
+**Rule:** The cinematic landing lane is **never auto-detected** from keywords alone. The user must explicitly request it or use Template K. The trigger keywords above only apply AFTER the user has activated the lane.
+
+---
+
+## 🔒 CANONICAL (KIT_VERSION v0.2.2)
+
+This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `.ai-kit/VERSIONING.md`. 
+If any older section contradicts this block or the core principles of v0.2.2, treat the older section as deprecated.
+
+**DECISION-GATES.md Invariants:**
+- **Mandatory:** If triggered by keywords or resource type, gates must be answered before PLAN.
+- **Reporting:** A Decision Report must be produced and locked to `DECISIONS-LOCKED.md`.
+- **Logic Not Resources:** Gates enforce EPCC. They do not consume the 2 ACTIVE resource slots.

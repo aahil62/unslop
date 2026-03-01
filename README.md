@@ -1,5 +1,6 @@
 # AI Dev Workflow Kit
 
+> **KIT_VERSION:** v0.2.2 (See `.ai-kit/VERSIONING.md`)
 > A drop-in agent workflow system for any AI-powered coding environment.
 > Enforces structured development, scope control, and quality gates on every task.
 
@@ -11,9 +12,10 @@ AI Dev Workflow Kit is a portable folder (`.ai-kit/`) you drop into any project 
 
 - **EPCC Engine** — a mandatory workflow loop: Explore → Plan → Code → Verify → Audit
 - **Resource Cards** — reusable knowledge cards that constrain agent behavior per task
-- **Max-2 Rule** — at most 2 active resources (1 PRIMARY + 1 SUPPORT) to prevent context overloada
+- **Decision Gates** — force the agent to ask questions, propose options, and lock decisions before coding on choice-heavy tasks
+- **Max-2 Rule** — at most 2 active resources (1 PRIMARY + 1 SUPPORT) to prevent context overload
 - **Status Banner** — every response starts with a structured header showing active resources and current step
-- **Start Menu** — 8 pre-built templates that boot the agent with the right resources for common tasks
+- **Start Menu** — pre-built templates that boot the agent with the right resources for common tasks
 
 It works with any AI coding tool. No vendor lock-in.
 
@@ -26,8 +28,9 @@ It works with any AI coding tool. No vendor lock-in.
 | **EPCC Engine** | Every task follows Explore → Plan → Code → Verify → Audit. No skipping steps. |
 | **Max 2 Active** | 1 PRIMARY + 1 SUPPORT resource per task. Others are reference-only. |
 | **Plan First** | No code before an approved plan. No unplanned file edits. |
+| **No Guessing** | On choice-heavy tasks (UI style, auth model, schema), the agent asks — it does not assume. |
 | **Banner Always** | Every response starts with a status header showing resources, engine, step, and scope. |
-| **Verify Everything** | Tasks end with verification (lint/build/test) and a quality audit checklist. VERIFY uses your repo's existing scripts (package.json / make / task runner). If scripts don't exist, run the standard commands for your stack or add minimal scripts. |
+| **Verify Everything** | Tasks end with verification (lint/build/test) and a quality audit checklist. |
 
 ---
 
@@ -45,20 +48,26 @@ cp -R .ai-kit/ /path/to/your/project/.ai-kit/
 
 ### 2. Pick a Template
 
-Open `.ai-kit/prompts/START.md` and choose a template:
+Open `.ai-kit/prompts/START.md` and choose a template. Templates activate exactly 2 resources (1 PRIMARY + 1 SUPPORT) and boot EPCC in EXPLORE.
 
-| ID | Name | PRIMARY | SUPPORT |
-|----|------|---------|---------|
-| A | Dashboard Feature | Dashboard-IA | UI-System-Specs |
-| B | Landing Page | Landing-Patterns | UI-System-Specs |
-| C | UI Polish | UI-System-Specs | UI-Polish-Checklist |
-| D | Reliability Pass | Reliability-Patterns | Debugging-Protocol |
-| E | Debug | Debugging-Protocol | Reliability-Patterns |
-| F | Dashboard + Polish | Dashboard-IA | UI-Polish-Checklist |
-| G | Landing + Polish | Landing-Patterns | UI-Polish-Checklist |
-| H | Reliability + Debug | Reliability-Patterns | Debugging-Protocol |
+**Shipped templates (A–L):**
 
-Note: Templates F–H still activate only 2 resources. The '+' in the name describes the intended outcome, not additional active resources.
+| ID | Name | PRIMARY | SUPPORT | Best For |
+|----|------|---------|---------|----------|
+| A | Universal Boot | `<your-project-template>` | `<your-workflow>` | Scaffolding a new project |
+| B | Backend-Heavy SaaS | `<your-build-protocol>` | `<your-error-handling>` | Greenfield backend w/ schema |
+| C | Dashboard Feature | `<your-dashboard-card>` | `<your-ui-tokens>` | Dashboard / admin panel |
+| D | Landing Page | `<your-landing-card>` | `<your-ui-tokens>` | Animated marketing page |
+| E | UI Polish | `<your-ui-tokens>` | `<your-ui-polish>` | Refining existing UI |
+| F | Reliability Pass | `<your-error-handling>` | `<your-workflow>` | Hardening error handling |
+| G | Debug | `<your-debugger>` | `<your-error-handling>` | Persistent/multi-file bugs |
+| H | Ship-Ready QA | `<your-workflow>` | `<your-ui-polish>` | Final pass before shipping |
+| I | Landing (Illustrated BG) | UI Inspiration → Lane | Landing BG Asset Pipeline | Custom-BG landing pages |
+| J | Landing Copy + Deliverables | Deliverables Spec | Content Architecture | Multi-page marketing sites |
+| K | Cinematic Landing | Cinematic Landing Lane | Content Architecture | Preset-driven cinematic sites |
+| L | Cofounder Mode | (task-appropriate card) | Technical Cofounder Contract | Vague ideas → V1 builds |
+
+> Templates A–H use `<placeholder>` names — replace with your own resources or use the external example cards in `resources/external/cards/`. Templates I–L reference shipped cards.
 
 ### 3. Paste and Go
 
@@ -81,54 +90,85 @@ Each resource is a markdown card in `.ai-kit/resources/cards/` that defines:
 
 Cards are constraints + output expectations (kept short), not long reference documents.
 
-The kit ships with 6 cards:
+The kit ships with **9 cards**:
 
-| Card | Domain | Purpose |
-|------|--------|---------|
-| `ui-system-specs.md` | UI-System | Design specs, spacing, colors, typography |
-| `ui-polish-checklist.md` | UI-Polish | Component-level refinement |
-| `landing-patterns.md` | Landing | Landing page structure and conversion |
-| `dashboard-ia.md` | Dashboard | Dashboard layout and information architecture |
-| `reliability-patterns.md` | Reliability | Error handling and resilience |
-| `debugging-protocol.md` | Debugging | Structured debugging methodology |
+| Card | Domain | Type | Purpose |
+|------|--------|------|---------|
+| `anti-ai-slop-details.md` | UI-Polish | Choice-heavy | Polish intensity, icon system, anti-pattern checklist |
+| `cinematic-landing-lane.md` | Landing/Motion | Choice-heavy | Preset-driven cinematic landing pages (4 presets) |
+| `component-logic-spec.md` | UI+Logic | Procedural | State machines, data flow, edge case specs |
+| `content-architecture.md` | Content | Choice-heavy | Copy, headlines, FAQ, content structure |
+| `deliverables-specs.md` | Product/Arch | Choice-heavy | Sitemap, user journeys, perf budgets |
+| `landing-bg-asset-pipeline.md` | Landing | Choice-heavy | Custom background asset generation |
+| `reference-style-extraction.md` | UI-System | Choice-heavy | Extract styles from reference sites |
+| `technical-cofounder-contract.md` | Product/Collaboration | Procedural | Cofounder communication overlay |
+| `ui-inspiration-to-lane.md` | UI-Genre | Choice-heavy | Inspiration → locked UI lane |
 
 ### Resource Index
-`resources/RESOURCE-INDEX.md` is the master index. It lists all resources, their domains, authority levels, and recommended combos.
+`resources/RESOURCE-INDEX.md` is the master index. It lists all resources, their domains, authority levels, and classification.
 
 ### External Resources
-`resources/external/EXTERNAL-RESOURCE-REGISTRY.md` is a template for tracking your own external resources (docs, repos, tools). Fill it in with your team's knowledge.
+`resources/external/` contains 7 **example** external resource cards + a community skills library reference. These are examples to learn from and optionally use — the kit works without them.
 
 ---
 
-## Start Menu
+## Decision Gates
 
-The start menu (`.ai-kit/prompts/START.md`) has 8 templates. Each one:
-1. Reads `AGENTS.md` + `RESOURCE-INDEX.md`
-2. Uses the EPCC workflow
-3. Activates exactly 2 resources (1 PRIMARY + 1 SUPPORT)
-4. Starts in EXPLORE (no planning or coding until exploration is done)
+For choice-heavy tasks (UI style, auth model, schema, architecture), the agent runs Decision Gates before planning:
+
+1. **Gates trigger automatically** based on task keywords
+2. **Agent asks questions** in rounds of max 8, grouped by gate
+3. **You answer** — agent presents 2–3 options with pros/cons
+4. **Decisions lock** to `DECISIONS-LOCKED.md` and persist across sessions
+5. **Escape hatch** — say the exact phrase `"INPUTS ARE FIXED, SKIP GATES."` to bypass
+
+See `.ai-kit/prompts/DECISION-GATES.md` for full gate definitions (A–H).
 
 ---
 
-## Example Workflows
+## Cofounder Mode
 
-### Dashboard Build
-1. Paste **Template A** (Dashboard Feature) into your agent
-2. Agent activates Dashboard-IA (PRIMARY) + UI-System-Specs (SUPPORT)
-3. EXPLORE: Agent scans your codebase, identifies existing patterns
-4. PLAN: Agent drafts a file-by-file plan for the dashboard
-5. CODE: Agent implements the plan, following Dashboard-IA rules
-6. VERIFY: Agent runs lint/build/test
-7. AUDIT: Agent checks quality gates (a11y, responsiveness, states, performance)
+Template L activates a **communication overlay** that makes the agent behave like a technical cofounder:
+- Treats you as the product owner — checks in at every decision point
+- Explains technical choices in plain language
+- Pushes back on overcomplication
+- Separates must-have from nice-to-have
+- Breaks builds into staged deliverables
 
-### Debug Session
-1. Paste **Template E** (Debug) into your agent
-2. Agent activates Debugging-Protocol (PRIMARY) + Reliability-Patterns (SUPPORT)
-3. EXPLORE: Agent reads error messages, scans relevant files
-4. PLAN: Agent generates 5 predictions, drafts investigation plan
-5. CODE: Agent creates a minimal repro, applies the fix
-6. VERIFY: Agent confirms fix and checks for regressions
-7. AUDIT: Agent documents the learning and hardens error handling
+Activate with: `COFOUNDER_MODE` or use Template L from START.md.
+
+---
+
+## Bring Your Own Resources
+
+The shipped cards are starting points. Add your own:
+
+1. Create a card in `resources/cards/your-resource.md` with the standard format
+2. Add it to `resources/RESOURCE-INDEX.md`
+3. Add an activation phrase to `prompts/ACTIVATE.md`
+4. Register external resources in `resources/external/EXTERNAL-RESOURCE-REGISTRY.md`
+
+---
+
+## Repository Structure
+
+```
+.
+├── .ai-kit/                   ← The portable kit (copy this into your project)
+│   ├── AGENTS.md              ← Agent brain (identity, rules, commands)
+│   ├── README.md              ← Kit guide
+│   ├── prompts/               ← Workflow, activation, start menu, decision gates
+│   └── resources/             ← Resource index, cards, reference docs, external
+├── scripts/                   ← Install scripts (install.sh, install.ps1)
+├── examples/                  ← Minimal usage example
+├── README.md                  ← This file
+├── LICENSE                    ← MIT
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+├── SECURITY.md
+├── CHANGELOG.md
+└── ROADMAP.md
+```
 
 ---
 
@@ -138,40 +178,6 @@ The start menu (`.ai-kit/prompts/START.md`) has 8 templates. Each one:
 - **Not an AI model.** It works with any AI coding tool — it provides the workflow, not the intelligence.
 - **Not opinionated about your stack.** It works with React, Vue, Python, Go, Rust, or anything else.
 - **Not a replacement for tests.** It enforces that tests are run, but it does not write your test suite.
-
----
-
-## Bring Your Own Resources
-
-The 6 included cards are examples. You are encouraged to add your own:
-
-1. Create a card in `resources/cards/your-resource.md` with the standard format
-2. Add it to `resources/RESOURCE-INDEX.md`
-3. Add an activation phrase to `prompts/ACTIVATE.md`
-4. Add external resources to `resources/external/EXTERNAL-RESOURCE-REGISTRY.md`
-
----
-
-## Repository Structure
-
-```
-.
-├── .ai-kit/                   ← The portable kit (copy this into your project)
-│   ├── AGENTS.md              ← Agent brain
-│   ├── README.md              ← Kit guide
-│   ├── prompts/               ← Workflow, activation, start menu
-│   └── resources/             ← Resource index, cards, external registry
-├── scripts/                   ← Install scripts
-├── examples/                  ← Minimal usage example
-├── AGENTS.md                  ← Root pointer to .ai-kit/
-├── README.md                  ← This file
-├── LICENSE                    ← MIT
-├── CONTRIBUTING.md
-├── CODE_OF_CONDUCT.md
-├── SECURITY.md
-├── CHANGELOG.md
-└── ROADMAP.md
-```
 
 ---
 
