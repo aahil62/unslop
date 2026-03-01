@@ -3,6 +3,9 @@
 > **Purpose:** Force the agent to ask questions, propose options, and lock decisions before PLAN or CODE on any choice-heavy task.
 >
 > **This file is tool-agnostic.** It works identically in any AI coding environment.
+>
+> **Authoritative:** `.ai-kit/CANONICAL.md`
+> **LEGACY POLICY:** Older patch blocks remain for history, but `.ai-kit/CANONICAL.md` and the latest CANONICAL blocks override them.
 
 ---
 
@@ -546,7 +549,7 @@ Proceeding to PLAN.
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.1) — Skill Selection Gate — 2026-02-28
 
@@ -591,11 +594,11 @@ The following row is added to the Decision Trigger Heuristics table:
 | Security + Skills | security audit, pentest, vulnerability, hardening + any H trigger | A + B + H |
 | DevOps + Skills | deploy, CI/CD, container, serverless + any H trigger | A + C + H |
 
-**Rule:** Gate H is independent of Gates A–G. It may trigger alone (when user just wants skills) or alongside other gates (when the task is also choice-heavy). Gate H does NOT block PLAN by itself — it only blocks external skill invocation.
+**Rule:** Gate H may trigger alone (when user just wants skills) or alongside the other decision gates (when the task is also choice-heavy). Gate H does NOT block PLAN by itself — it only blocks external skill invocation.
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.2) — Non-Trivial Task Heuristic — 2026-02-28
 
@@ -613,7 +616,7 @@ This catches tasks that are complex but don't match existing keyword heuristics 
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.3) — Gate Extensions for UI, Content, and Specs — 2026-02-28
 
@@ -626,7 +629,7 @@ When Gate D (UI Genre + Aesthetic Lane) triggers and the UI lane is **not** alre
    - If no → present 3–5 lanes from `ui-inspiration-to-lane.md` (A–E) and ask user to choose
 2. Output must include:
    - Chosen lane name + rationale
-   - Acceptance criteria (5–8 items)
+   - Acceptance criteria (3–5 items)
    - **Asset pipeline flag:** YES / NO / MAYBE
 3. Lock lane to DECISIONS-LOCKED.md under "UI Lane"
 
@@ -674,7 +677,7 @@ For product builds (detected by: SaaS, app, product, platform, marketplace):
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.5) — Cinematic Landing Lane — 2026-03-01
 
@@ -698,7 +701,7 @@ When Gate D (UI Genre + Aesthetic Lane) triggers and the user explicitly selects
 5. **Acceptance Criteria (3–5 checks)** — Derived from selected preset + fixed design system. Must include at minimum:
    - Noise overlay at 0.05 opacity
    - Hero typography matches preset's line pattern
-   - All seven component sections (A–G) present and functional
+   - All seven required component sections present and functional
    - GSAP ScrollTrigger stacking cards pin correctly
    - Magnetic button hover effect active
 
@@ -720,12 +723,13 @@ When Gate D (UI Genre + Aesthetic Lane) triggers and the user explicitly selects
 
 ---
 
-## 🔒 CANONICAL (KIT_VERSION v2.0.0)
+## 🔒 CANONICAL (KIT_VERSION v2.0.1)
 
-This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `.ai-kit/VERSIONING.md`. 
-If any older section contradicts this block or the core principles of v2.0.0, treat the older section as deprecated.
+This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `.ai-kit/VERSIONING.md` and `.ai-kit/CANONICAL.md`. 
+If any older section contradicts this block or the core principles of v2.0.1, treat the older section as deprecated.
 
 **DECISION-GATES.md Invariants:**
+- **Gate Range:** A–H.
 - **Mandatory:** If triggered by keywords or resource type, gates must be answered before PLAN.
 - **Reporting:** A Decision Report must be produced and locked to `DECISIONS-LOCKED.md`.
 - **Logic Not Resources:** Gates enforce EPCC. They do not consume the 2 ACTIVE resource slots.

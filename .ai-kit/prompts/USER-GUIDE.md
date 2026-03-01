@@ -1,6 +1,6 @@
 # 📖 User Guide — AI-Kit Governor System
 
-> **Version:** v3.3 — 2026-02-28
+> **KIT_VERSION:** v2.0.1 (see `../CANONICAL.md`)
 > **Audience:** You — the person using this kit to build things with AI coding agents.
 
 ---
@@ -25,7 +25,7 @@ It works with **any** AI coding agent — Claude Code, Cursor, Gemini, Copilot, 
 
 | File | When | What You Do |
 |------|------|-------------|
-| `START.md` | Beginning of any task | Pick a template (A–J) or type `START_MENU` |
+| `START.md` | Beginning of any task | Pick a template from `../CANONICAL.md` or type `START_MENU` |
 | `ACTIVATE.md` | Need a specific command | Scan the command list, paste the exact phrase |
 | `DECISION-GATES.md` | Agent asks you questions | Answer the gate questions (max 8 per round) |
 | `DECISIONS-LOCKED.md` | After gates finish | Review locked decisions — this persists across sessions |
@@ -57,20 +57,9 @@ It works with **any** AI coding agent — Claude Code, Cursor, Gemini, Copilot, 
 
 ### 1. Start with a Template
 
-Don't invent your own start sequence. Use `START_MENU` to see all 10 templates:
-
-| Template | Best For |
-|----------|----------|
-| **A** Universal Boot | New project or onboarding |
-| **B** Backend-Heavy SaaS | Greenfield backend build |
-| **C** Dashboard Feature | Admin panels, analytics |
-| **D** Landing Page | Premium animated landing |
-| **E** UI Polish | Refining existing UI |
-| **F** Reliability Pass | Error handling, resilience |
-| **G** Debug | Persistent, multi-file bugs |
-| **H** Ship-Ready QA | Final polish before deploy |
-| **I** Landing (Illustrated BG) | Landing page needing custom background |
-| **J** Landing Copy + Deliverables | Multi-page site needing scope + copy first |
+Don't invent your own start sequence. Use `START_MENU`, then choose from the canonical template catalog in `../CANONICAL.md`:
+- **Default path:** shipped templates for minimal-kit usage
+- **Legacy path:** extension templates only when matching cards exist
 
 ### 2. The Agent Will Ask You Questions — Answer Them
 
@@ -103,7 +92,8 @@ Once gates are resolved, decisions are locked to `DECISIONS-LOCKED.md`. This mea
 The kit grows by adding patches, never by rewriting. This means:
 - You might see "deprecated" sections still in files — that's intentional
 - The latest patch always wins
-- Version labels (v1.0 → v3.3) track what changed when
+- Legacy patch labels (v1.x/v3.x) track when rules were added historically
+- Canonical behavior is governed by `../CANONICAL.md` plus each file's `CANONICAL` block
 
 ---
 
@@ -145,7 +135,7 @@ The kit grows by adding patches, never by rewriting. This means:
 
 | Term | Meaning |
 |------|---------|
-| **EPCC** | Explore → Plan → Code → Check (+ Verify + Audit). The engine. Always running. |
+| **EPCC** | Explore → Plan → Code → Verify → Audit. The engine. Always running. |
 | **ENGINE** | EPCC. There's only one. Always EPCC. |
 | **WORKFLOW PROTOCOL** | Optional overlay (Phased-Build or Agentic-Dev-Workflow) that adds phases inside EPCC |
 | **PRIMARY** | The main active resource (max 1) |
@@ -165,7 +155,7 @@ The kit grows by adding patches, never by rewriting. This means:
 
 | Command | What It Does |
 |---------|-------------|
-| `START_MENU` | Show all 10 start templates |
+| `START_MENU` | Show available start templates (see `../CANONICAL.md` for default vs legacy) |
 | `START_RECOMMEND` | Agent recommends best template for your task |
 | `SHOW_ACTIVE_RESOURCES` | Print current PRIMARY, SUPPORT, step, scope |
 | `SHOW_DECISION_STATE` | Print which gates are done vs pending |

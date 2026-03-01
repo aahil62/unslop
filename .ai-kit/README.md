@@ -1,8 +1,16 @@
 # .ai-kit — Portable Agent Governance Kit
 
-> **KIT_VERSION:** v2.0.0 (See `VERSIONING.md`)
+> **KIT_VERSION:** v2.0.1 (See `CANONICAL.md`)
 > **Copy this single folder into any new project to bring the full Governor Mode system.**
 > **This kit is versioned; canonical version overrides legacy patch blocks.**
+
+## Canonical Snapshot
+
+- **Version authority:** `CANONICAL.md` (`KIT_VERSION v2.0.1`)
+- **Template set:** canonical list in `CANONICAL.md`
+- **Decision gates:** canonical range `A–H` in `CANONICAL.md`
+- **Legacy note:** patch labels (`v1.x/v3.x`) are historical markers only
+- **Quick current view:** `CURRENT-VIEW.md`
 
 ---
 

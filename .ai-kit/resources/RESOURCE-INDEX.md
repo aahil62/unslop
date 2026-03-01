@@ -4,6 +4,9 @@
 > Auto-generated template. Add your own resources below using the structure provided.
 >
 > **This index is tool-agnostic.** It works identically whether loaded by Claude Code, Cursor, Codex, OpenCode, Windsurf, or any other AI coding agent. The principles are universal; only the execution environment changes.
+>
+> **Authoritative:** `.ai-kit/CANONICAL.md`
+> **LEGACY POLICY:** Older patch blocks remain for history, but `.ai-kit/CANONICAL.md` and the latest CANONICAL blocks override them.
 
 ---
 
@@ -194,7 +197,7 @@ Each scenario activates **exactly 2** resources (1 PRIMARY + 1 SUPPORT). Others 
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH — 2026-02-25
 
@@ -245,7 +248,7 @@ Resource quality is measured by **pass/fail gates**, not palette counts or price
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v1.1) — 2026-02-25
 
@@ -278,7 +281,7 @@ Resource quality is measured by **pass/fail gates**, not palette counts or price
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v1.3) — 2026-02-25
 
@@ -342,7 +345,7 @@ This is consistent with PATCH (v1.2) and confirmed here for canonical clarity.
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3) — 2026-02-28
 
@@ -395,7 +398,7 @@ When running Decision Gates, ask questions in **rounds of max 8**. Group by gate
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.1) — External Skills Library — 2026-02-28
 
@@ -432,7 +435,7 @@ This resource is **never PRIMARY or SUPPORT**. It is always reference-only, with
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.3) — New Resource Cards — 2026-02-28
 
@@ -458,7 +461,7 @@ This resource is **never PRIMARY or SUPPORT**. It is always reference-only, with
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.5) — Cinematic Landing Lane — 2026-03-01
 
@@ -488,7 +491,7 @@ This resource is **never PRIMARY or SUPPORT**. It is always reference-only, with
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v0.1.2) — Technical Cofounder Contract — 2026-03-01
 
@@ -507,10 +510,10 @@ This resource is **never PRIMARY or SUPPORT**. It is always reference-only, with
 
 ---
 
-## 🔒 CANONICAL (KIT_VERSION v2.0.0)
+## 🔒 CANONICAL (KIT_VERSION v2.0.1)
 
 This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `../VERSIONING.md`. 
-If any older section contradicts this block or the core principles of v2.0.0, treat the older section as deprecated.
+If any older section contradicts this block or the core principles of v2.0.1, treat the older section as deprecated.
 
 **RESOURCE-INDEX.md Invariants:**
 - **Max-2 Active:** Exactly 1 PRIMARY + 1 SUPPORT. All others are REF-ONLY.

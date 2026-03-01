@@ -1,7 +1,7 @@
 # AI Dev Workflow Kit — Versioning Policy
 
 ## Core Principle
-Starting with **KIT_VERSION: v2.0.0**, this repository uses a single, authoritative Semantic Version (SemVer) at the repository level.
+Starting with **KIT_VERSION: v2.0.1**, this repository uses a single, authoritative Semantic Version (SemVer) at the repository level.
 
 ## Handling Legacy Patch Labels
 Throughout the core governance files, you will see historical patch labels (e.g., `v1.2`, `v3.5`, `SYSTEM PATCH`).
@@ -13,6 +13,7 @@ Throughout the core governance files, you will see historical patch labels (e.g.
 To prevent AI agents from getting confused by older, overridden instructions in long files, we use **CANONICAL** override blocks.
 
 **Rule:** Within any file, the last block labeled `CANONICAL (KIT_VERSION <version>)` completely overrides any older, contradictory text above it.
+**SSOT Rule:** `.ai-kit/CANONICAL.md` is the repository-level source of truth for version, EPCC phase names, gate range, shipped templates/cards, and canonical commands.
 
 ### Guidance for Human Users
 If you want to know the absolute current rules of the system (e.g., maximum active resources, workflow steps), look for the `CANONICAL` block, usually located at the top or bottom of:
@@ -29,4 +30,4 @@ If you want to know the absolute current rules of the system (e.g., maximum acti
 3. **Report Drift:** If you notice severe contradictions between a canonical block and legacy text, silently follow the canonical block, but you may briefly note the drift to the user if it affects your current task.
 
 
-**Rule:** Repo version v2.0.0 is authoritative. Older internal patch labels are historical and may remain in text, but do not represent the current version.
+**Rule:** Repo version v2.0.1 is authoritative. Older internal patch labels are historical and may remain in text, but do not represent the current version.

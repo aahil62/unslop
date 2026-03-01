@@ -3,13 +3,16 @@
 > This is the mandatory workflow the Governor agent follows on every task. It enforces the EPCC pattern with scope control, state handling, and a quality audit.
 >
 > **This workflow is tool-agnostic.** It applies identically regardless of which AI coding agent, IDE, or terminal environment is executing it. The discipline is in the process, not the platform.
+>
+> **Authoritative:** `.ai-kit/CANONICAL.md`
+> **LEGACY POLICY:** Older patch blocks remain for history, but `.ai-kit/CANONICAL.md` and the latest CANONICAL blocks override them.
 
 ---
 
-## The Loop: EPCC+
+## The Loop: EPCC
 
 ```
-Explore → Plan → Code → Check → Polish → Ship
+Explore → Plan → Code → Verify → Audit
 ```
 
 ---
@@ -61,7 +64,7 @@ Explore → Plan → Code → Check → Polish → Ship
 
 ---
 
-## Phase 4: Check ✅
+## Phase 4: Verify ✅
 
 **Goal:** Verify correctness like a skeptical senior dev.
 
@@ -77,11 +80,11 @@ Explore → Plan → Code → Check → Polish → Ship
 
 ---
 
-## Phase 5: Polish ✨
+## Phase 5: Audit 🧪
 
-**Goal:** Elevate from "works" to "premium."
+**Goal:** Confirm quality and readiness.
 
-- [ ] Apply Design-Elements refinements if UI is involved
+- [ ] Apply anti-slop/design refinements if UI is involved
 - [ ] Ensure responsive behavior across breakpoints
 - [ ] Add micro-animations or transitions where appropriate
 - [ ] Review accessibility (keyboard nav, ARIA labels, contrast)
@@ -91,18 +94,10 @@ Explore → Plan → Code → Check → Polish → Ship
 
 ---
 
-## Phase 6: Ship 🚀
+## LEGACY: Phase Labels
 
-**Goal:** Commit and communicate.
-
-- [ ] Write a clear, descriptive commit message
-- [ ] Summarize what changed and why
-- [ ] Note any follow-up items or known limitations
-- [ ] Push to the appropriate branch
-
-**Output:** Committed, pushed, documented.
-
----
+LEGACY: the former `Check → Polish → Ship` phase chain is superseded by EPCC per `.ai-kit/CANONICAL.md`.
+`Polish` and `Ship` are optional activities that run inside Verify/Audit when relevant.
 
 ## 🏁 Quality Audit Checklist
 
@@ -164,7 +159,7 @@ Workflow step: EXPLORE / PLAN / CODE / VERIFY / AUDIT
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH — 2026-02-25
 
@@ -212,7 +207,7 @@ The banner must always show `ENGINE: EPCC`. If a workflow protocol is active as 
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v1.3) — 2026-02-25
 
@@ -238,7 +233,7 @@ When we say "choose one engine" (Rule 6, lines 169–178), we mean: **choose at 
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3) — Decision Gates Enforcement — 2026-02-28
 
@@ -286,7 +281,7 @@ The **only** way to skip Decision Gates is the exact phrase: `"INPUTS ARE FIXED,
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.1) — External Skills Enforcement — 2026-02-28
 
@@ -311,7 +306,7 @@ Never invoke an external skill with `risk: unknown` or `risk: high` (per `skills
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.2) — Subagents, Lessons, Task Discipline — 2026-02-28
 
@@ -353,7 +348,7 @@ For tasks meeting subagent criteria (see `prompts/SUBAGENTS.md`):
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.3) — UI Lane + Anti-Slop Rules — 2026-02-28
 
@@ -379,7 +374,7 @@ For any task that produces visible UI (landing, dashboard, component, page):
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v0.2.1) — WORKFLOW Polish Alignment — 2026-03-01
 
@@ -388,13 +383,13 @@ The instruction "Apply Design-Elements refinements if UI is involved" references
 - For minimal kit users: if UI work is involved, use `cards/anti-ai-slop-details.md` as the Polish checklist.
 - Keep max-2 active resources: if a SUPPORT is already active, treat `anti-ai-slop-details.md` as REF-ONLY and still apply its checklist during the Polish phase.
 
-## 🔒 CANONICAL (KIT_VERSION v2.0.0)
+## 🔒 CANONICAL (KIT_VERSION v2.0.1)
 
-This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `.ai-kit/VERSIONING.md`. 
-If any older section contradicts this block or the core principles of v2.0.0, treat the older section as deprecated.
+This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `.ai-kit/VERSIONING.md` and `.ai-kit/CANONICAL.md`. 
+If any older section contradicts this block or the core principles of v2.0.1, treat the older section as deprecated.
 
 **WORKFLOW.md Invariants:**
-- **The Engine:** EPCC (Explore → Plan → Code → Check → Polish → Ship) is the only engine.
+- **The Engine:** EPCC (Explore → Plan → Code → Verify → Audit) is the only engine.
 - **Rule 1:** No coding before PLAN.
 - **Rule 2:** Only modify files listed in PLAN.
 - **Rule 9:** Decision Gates before PLAN for choice-heavy tasks.

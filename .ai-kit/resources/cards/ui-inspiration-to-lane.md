@@ -27,7 +27,7 @@ A structured process that converts vague aesthetic preferences ("I want it to lo
 | **Lane Selection** | Locked lane name from the options below |
 | **"Why It Works" Analysis** | 3–5 bullet points analyzing what makes the chosen refs effective |
 | **Do / Don't List** | 5 do's, 5 don'ts — concrete, measurable, implementable |
-| **Lane Acceptance Criteria** | Checklist of 5–8 items that must be true for the UI to pass lane review |
+| **Lane Acceptance Criteria** | Checklist of 3–5 items that must be true for the UI to pass lane review |
 | **Asset Pipeline Flag** | YES/NO — does this lane require `landing-bg-asset-pipeline.md`? |
 
 ## Conflicts / Overlaps
@@ -84,6 +84,6 @@ After lane selection:
 - Locked lane (A/B/C/D/E) with rationale
 - Inspiration refs (2–3 named sites)
 - Do/don't list (10 items)
-- Acceptance criteria (5–8 items)
+- Acceptance criteria (3–5 items)
 - Asset pipeline flag (YES/NO/MAYBE)
 - Written to DECISIONS-LOCKED.md under "UI Lane"

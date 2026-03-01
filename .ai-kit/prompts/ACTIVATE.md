@@ -3,6 +3,9 @@
 > Type any of these exact phrases to force the agent to load and apply the corresponding resource during your current task.
 >
 > **These phrases are tool-agnostic.** They work identically in any AI coding environment—terminal, IDE, chat, or API. The agent reads the phrase, loads the resource, and applies the patterns.
+>
+> **Authoritative:** `.ai-kit/CANONICAL.md`
+> **LEGACY POLICY:** Older patch blocks remain for history, but `.ai-kit/CANONICAL.md` and the latest CANONICAL blocks override them.
 
 ---
 
@@ -178,7 +181,7 @@ RECOMMEND_RESOURCES_FOR_TASK
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH — 2026-02-25
 
@@ -221,7 +224,7 @@ If a design resource is activated but no artifacts are produced before entering 
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v1.1) — 2026-02-25
 
@@ -283,7 +286,7 @@ This supersedes all prior banner definitions. Every response must begin with:
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v1.3) — 2026-02-25
 
@@ -363,7 +366,7 @@ If the user requests 3+ ACTIVE resources in a single activation:
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v1.4) — 2026-02-25
 
@@ -385,7 +388,7 @@ START_RECOMMEND
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3) — Decision Gates Commands — 2026-02-28
 
@@ -399,7 +402,7 @@ Decision Gates are an EPCC enforcement layer. They do **not** count as an active
 ```
 RUN_DECISION_GATES
 ```
-**Effect:** Scans the current task for decision-heavy keywords (see `prompts/DECISION-GATES.md` Trigger Heuristics). Identifies which gates (A–G) are triggered. Asks Round 1 questions (max 8, grouped by gate, highest-impact first). After answers, asks additional rounds if needed. Produces a Decision Report when all gates are resolved.
+**Effect:** Scans the current task for decision-heavy keywords (see `prompts/DECISION-GATES.md` Trigger Heuristics). Identifies which gates (A–H) are triggered. Asks Round 1 questions (max 8, grouped by gate, highest-impact first). After answers, asks additional rounds if needed. Produces a Decision Report when all gates are resolved.
 
 ---
 
@@ -417,6 +420,7 @@ SHOW_DECISION_STATE
 │ Gate E (Design System):    ✅ / ⬜ / N/A │
 │ Gate F (Motion):           ✅ / ⬜ / N/A │
 │ Gate G (Verification):     ✅ / ⬜ / N/A │
+│ Gate H (Skills):           ✅ / ⬜ / N/A │
 │                                         │
 │ Locked decisions: X / Y total           │
 │ Can proceed to PLAN: YES / NO           │
@@ -454,7 +458,7 @@ If the user asks to build, code, or implement on a decision-heavy task (detected
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.1) — External Skills Commands — 2026-02-28
 
@@ -522,7 +526,7 @@ If the agent attempts to invoke an external skill that is NOT in the locked allo
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.2) — Subagents, Lessons, Templates — 2026-02-28
 
@@ -590,7 +594,7 @@ After the user selects a template, the agent copies it and fills in the task-spe
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.3) — Prompt Macro Commands — 2026-02-28
 
@@ -663,7 +667,7 @@ EXTRACT_REFERENCE_STYLE
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v0.1.2) — Cofounder Mode — 2026-03-01
 
@@ -693,13 +697,13 @@ COFOUNDER_MODE
 
 ---
 
-## 🔒 CANONICAL (KIT_VERSION v2.0.0)
+## 🔒 CANONICAL (KIT_VERSION v2.0.1)
 
-This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `.ai-kit/VERSIONING.md`. 
-If any older section contradicts this block or the core principles of v2.0.0, treat the older section as deprecated.
+This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `.ai-kit/VERSIONING.md` and `.ai-kit/CANONICAL.md`. 
+If any older section contradicts this block or the core principles of v2.0.1, treat the older section as deprecated.
 
 **ACTIVATE.md Invariants:**
 - **Max-2 Active:** Commands requesting 3+ active resources must be refused and ask the user to pick 2.
 - **Always Banner:** Every response must begin with the 7-line banner (`PRIMARY`, `SUPPORT`, `ENGINE`, `STEP`, `PHASE`, `SCOPE`, `REF-ONLY`).
 - **Engine:** `ENGINE` in the banner is always EPCC.
-
+- **Gate Range:** Decision gates use the canonical A–H range.

@@ -1,5 +1,8 @@
 # 📊 System Status Report — AI-Kit Governor Resync Audit
 
+> Generated snapshot; may be outdated. Canonical truth lives in `.ai-kit/CANONICAL.md`.
+> Do not use this file to resolve conflicts. Use `.ai-kit/CANONICAL.md` and `.ai-kit/CURRENT-VIEW.md`.
+
 > **Audit date:** 2026-02-28
 > **Scope:** Full read of all 45 files in `.ai-kit/`
 > **Method:** Rebuilt understanding solely from repo files — no memory carryover

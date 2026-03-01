@@ -20,7 +20,7 @@ The best contribution is a new resource card:
 If you want to change the workflow engine, activation system, or core rules:
 1. Open an issue first to discuss the change
 2. Explain why the change is needed and what behavior it affects
-3. Ensure backward compatibility with the Start Menu templates (A–H)
+3. Ensure consistency with `.ai-kit/CANONICAL.md` (workflow, gates, templates, commands)
 
 ## Guidelines
 

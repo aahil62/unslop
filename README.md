@@ -1,8 +1,16 @@
 # AI Dev Workflow Kit
 
-> **KIT_VERSION:** v2.0.0 (See `.ai-kit/VERSIONING.md`)
+> **KIT_VERSION:** v2.0.1 (See `.ai-kit/CANONICAL.md`)
 > A drop-in agent workflow system for any AI-powered coding environment.
 > Enforces structured development, scope control, and quality gates on every task.
+
+## Canonical Snapshot
+
+- **Version authority:** `.ai-kit/CANONICAL.md` (`KIT_VERSION v2.0.1`)
+- **Template catalog:** canonical list in `.ai-kit/CANONICAL.md`
+- **Decision gates:** canonical range `A–H` in `.ai-kit/CANONICAL.md`
+- **Legacy note:** `v1.x/v3.x` patch labels are historical context, not current version identifiers
+- **Quick current view:** `.ai-kit/CURRENT-VIEW.md`
 
 ---
 
@@ -18,6 +26,7 @@ AI Dev Workflow Kit is a portable folder (`.ai-kit/`) you drop into any project 
 - **Start Menu** — pre-built templates that boot the agent with the right resources for common tasks
 
 It works with any AI coding tool. No vendor lock-in.
+Rules are instruction-level constraints; enforcement depends on agent compliance, but the kit is designed to make drift visible and hard to justify.
 
 ---
 
@@ -50,7 +59,7 @@ cp -R .ai-kit/ /path/to/your/project/.ai-kit/
 
 Open `.ai-kit/prompts/START.md` and choose a template. Templates activate exactly 2 resources (1 PRIMARY + 1 SUPPORT) and boot EPCC in EXPLORE.
 
-**Shipped templates (A–L):**
+**Available templates (A–L):**
 
 | ID | Name | PRIMARY | SUPPORT | Best For |
 |----|------|---------|---------|----------|
@@ -67,7 +76,8 @@ Open `.ai-kit/prompts/START.md` and choose a template. Templates activate exactl
 | K | Cinematic Landing | Cinematic Landing Lane | Content Architecture | Preset-driven cinematic sites |
 | L | Cofounder Mode | (task-appropriate card) | Technical Cofounder Contract | Vague ideas → V1 builds |
 
-> Templates I–L use `<placeholder>` names — replace with your own resources or use the external example cards in `resources/external/cards/`. Templates I–L reference shipped cards.
+> Templates A–H are legacy/extension-oriented and may reference cards you provide separately.
+> Templates I–L reference shipped cards in this repository.
 
 ### 3. Paste and Go
 

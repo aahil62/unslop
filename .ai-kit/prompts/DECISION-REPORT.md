@@ -39,6 +39,7 @@
 | E | Design System | ⬜/✅/N/A | |
 | F | Interaction/Motion | ⬜/✅/N/A | |
 | G | Verification | ⬜/✅ | |
+| H | Skills Allowlist | ⬜/✅/N/A | |
 
 ---
 

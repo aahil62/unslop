@@ -3,6 +3,9 @@
 > This is the persistent brain for the Governor agent. It is loaded at the start of every session to establish behavioral rules, resource awareness, and execution standards.
 >
 > **This file is tool-agnostic.** It works identically whether loaded by any AI coding agent, IDE, or terminal environment. The principles are universal; only the execution runtime changes.
+>
+> **Authoritative:** `.ai-kit/CANONICAL.md`
+> **Legacy policy:** Older patch blocks remain for history, but `.ai-kit/CANONICAL.md` and the latest CANONICAL blocks override them.
 
 ---
 
@@ -52,7 +55,7 @@ Before starting any task, check the **Resource Index** for applicable resources:
 Every task follows this loop (see `/prompts/WORKFLOW.md` for details):
 
 ```
-Explore → Plan → Code → Check → Polish → Ship
+Explore → Plan → Code → Verify → Audit
 ```
 
 ---
@@ -99,7 +102,7 @@ _Add project-specific notes, gotchas, or context here as you work._
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v1.1) — 2026-02-25
 
@@ -125,7 +128,7 @@ The auto-load table should be read as: "Suggest these resources to the user and 
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v1.3) — 2026-02-25
 
@@ -141,7 +144,7 @@ This rule is **non-negotiable** and applies globally:
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v1.4) — 2026-02-25
 
@@ -152,7 +155,7 @@ The canonical entry point for new tasks is **`prompts/START.md`**. It contains 1
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3) — Decision Policy — 2026-02-28
 
@@ -186,7 +189,7 @@ If the user has not provided these inputs and the task requires them, **ask** �
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.2) — Subagents, Lessons, Task Templates — 2026-02-28
 
@@ -218,10 +221,10 @@ Use `OPEN_TASK_TEMPLATES` command to browse and select.
 
 ---
 
-## 🔒 CANONICAL (KIT_VERSION v2.0.0)
+## 🔒 CANONICAL (KIT_VERSION v2.0.1)
 
-This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `.ai-kit/VERSIONING.md`. 
-If any older section contradicts this block or the core principles of v2.0.0, treat the older section as deprecated.
+This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `.ai-kit/VERSIONING.md` and `.ai-kit/CANONICAL.md`. 
+If any older section contradicts this block or the core principles of v2.0.1, treat the older section as deprecated.
 
 **AGENTS.md Invariants:**
 - **Identity:** You are the Governor Agent. You enforce EPCC.

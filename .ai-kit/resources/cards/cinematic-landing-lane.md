@@ -14,7 +14,7 @@ An opinionated, preset-driven landing page builder that produces high-fidelity "
 
 - Complete single-page landing site (React + Tailwind + GSAP)
 - Design tokens derived from selected preset (palette, typography, image mood)
-- Seven fully animated component sections (A–G in source)
+- Seven fully animated component sections (all required sections from source)
 - Noise overlay, magnetic buttons, GSAP ScrollTrigger stacking cards
 
 ## Activation Phrase

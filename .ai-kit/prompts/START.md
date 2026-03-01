@@ -3,6 +3,9 @@
 > **Pick a template, paste it, start building.** Each template boots EPCC in EXPLORE with exactly 2 active resources (1 PRIMARY + 1 SUPPORT). No plan, no code — just context loading and exploration.
 >
 > **This file is tool-agnostic.** Works identically in any AI coding environment.
+>
+> **Authoritative:** `.ai-kit/CANONICAL.md`
+> **LEGACY POLICY:** Older patch blocks remain for history, but `.ai-kit/CANONICAL.md` and the latest CANONICAL blocks override them.
 
 ---
 
@@ -175,7 +178,7 @@ Begin EXPLORE. Do not plan or code yet.
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.3) — New Start Templates — 2026-02-28
 
@@ -230,7 +233,7 @@ then GENERATE_PAGE_COPY for content. Do not plan or code yet.
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v3.5) — Cinematic Landing Template — 2026-03-01
 
@@ -268,7 +271,7 @@ LOCK_DECISIONS. Then proceed to PLAN.
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v0.1.2) — Cofounder Mode Template — 2026-03-01
 
@@ -313,7 +316,7 @@ then RUN_DECISION_GATES. Do not plan or code yet.
 
 ---
 
-> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.0.
+> **LEGACY NOTE:** Historical patch label. Current canonical version is KIT_VERSION v2.0.1.
 
 ## 🩹 [LEGACY] SYSTEM PATCH (v0.2.1) — START Templates Alignment — 2026-03-01
 
@@ -321,7 +324,7 @@ then RUN_DECISION_GATES. Do not plan or code yet.
 Templates A–H are LEGACY/EXTENSION examples and may reference non-shipped cards (e.g., `Project-Template`, `Dashboard-Architecture`, `Design Tokens`).
 - If you have these external cards, Templates A–H function as written.
 - If you do NOT have them, DO NOT use Templates A–H.
-- For minimal kit users: Prefer the MINIMAL templates (if present) or those introduced in recent patches.
+- For minimal kit users: use the shipped-template list in `.ai-kit/CANONICAL.md`.
 - Otherwise, pick exactly 1 PRIMARY + 1 SUPPORT from `.ai-kit/resources/RESOURCE-INDEX.md` (see the "Which 2 to Activate" table) and proceed with the EPCC engine.
 
 ---
@@ -331,10 +334,10 @@ For minimal-kit users, the canonical path is:
 - Open `.ai-kit/resources/RESOURCE-INDEX.md` and use **"Which 2 to Activate"** (Canonical) to choose exactly 1 PRIMARY + 1 SUPPORT.
 - Then follow EPCC: EXPLORE → RUN_DECISION_GATES (if triggered) → Decision Report → LOCK_DECISIONS → PLAN → CODE → VERIFY → AUDIT.
 
-## 🔒 CANONICAL (KIT_VERSION v2.0.0)
+## 🔒 CANONICAL (KIT_VERSION v2.0.1)
 
-This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `.ai-kit/VERSIONING.md`. 
-If any older section contradicts this block or the core principles of v2.0.0, treat the older section as deprecated.
+This file contains legacy patch notes (v1.x, v3.x, SYSTEM PATCH). The authoritative versioning policy is in `.ai-kit/VERSIONING.md` and `.ai-kit/CANONICAL.md`. 
+If any older section contradicts this block or the core principles of v2.0.1, treat the older section as deprecated.
 
 **START.md Invariants:**
 - **Entry Point:** Always use templates from this file to start tasks.

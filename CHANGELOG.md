@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v2.0.1] - 2026-03-02
+### Fixed
+- Added `.ai-kit/CANONICAL.md` as single source of truth (SSOT) for version, EPCC phases, gate range, templates, cards, and canonical commands.
+- Standardized EPCC to `Explore → Plan → Code → Verify → Audit` in canonical workflow definitions.
+- Standardized decision gate range to `A–H` in command and guide references.
+- Standardized lane acceptance criteria to `3–5` checks in gate and lane docs.
+- Updated install scripts and contributor guidance to point to `CANONICAL.md`.
+- Added canonical drift tooling: `scripts/check-canonical.sh` and `.github/workflows/canonical-check.yml`.
+- Marked system status report as generated snapshot with canonical source pointer.
+- Added `.ai-kit/CURRENT-VIEW.md` for a concise non-legacy operational summary.
+- Added optional enforcement profile and helper check: `.ai-kit/prompts/ENFORCEMENT-PROFILE.md` and `scripts/check-governor-state.sh`.
+
+### Release Highlights (Drift Fixed)
+- `CANONICAL.md` + `CURRENT-VIEW.md` now provide authoritative and concise guidance.
+- Default template path is explicitly `I–L` (with `A–H` retained as legacy/extensions).
+- Checker coverage shipped via `scripts/check-canonical.sh` (and CI workflow) to catch drift early.
+
 ## [v2.0.0] - 2026-03-01
 ### Added & Changed
 - Versioning unified to universal v2.0.0.
