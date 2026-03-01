@@ -13,16 +13,26 @@ fail() {
   exit 1
 }
 
+find_fixed() {
+  local pattern="$1"
+  local file="$2"
+  if command -v rg >/dev/null 2>&1; then
+    rg -q --fixed-strings -- "$pattern" "$file"
+  else
+    grep -Fq -- "$pattern" "$file"
+  fi
+}
+
 check_contains() {
   local file="$1"
   local pattern="$2"
-  rg -q --fixed-strings -- "$pattern" "$file" || fail "$file missing: $pattern"
+  find_fixed "$pattern" "$file" || fail "$file missing: $pattern"
 }
 
 check_not_contains() {
   local file="$1"
   local pattern="$2"
-  if rg -q --fixed-strings -- "$pattern" "$file"; then
+  if find_fixed "$pattern" "$file"; then
     fail "$file contains forbidden text: $pattern"
   fi
 }
