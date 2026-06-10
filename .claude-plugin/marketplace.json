@@ -1,0 +1,13 @@
+{
+  "name": "design-rescue",
+  "owner": {
+    "name": "Aahil Sayed"
+  },
+  "plugins": [
+    {
+      "name": "design-rescue",
+      "source": "./",
+      "description": "Audit, interview, and re-theme ugly vibe-coded React + Tailwind sites into premium, coherent designs."
+    }
+  ]
+}
