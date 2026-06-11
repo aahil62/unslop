@@ -66,13 +66,15 @@ const samples = await page.evaluate(() => {
 
   const out = [];
   const els = document.querySelectorAll(
-    "p,h1,h2,h3,h4,h5,h6,a,button,li,label,td,th,span"
+    "p,h1,h2,h3,h4,h5,h6,a,button,li,label,td,th,span,em,strong,blockquote,figcaption"
   );
   for (const el of els) {
     const hasDirectText = [...el.childNodes].some(
       (n) => n.nodeType === 3 && n.textContent.trim()
     );
     if (!hasDirectText) continue;
+    // Decorative text is exempt from WCAG contrast requirements.
+    if (el.closest('[aria-hidden="true"],[role="presentation"]')) continue;
     const r = el.getBoundingClientRect();
     if (r.width < 2 || r.height < 2) continue;
     const cs = getComputedStyle(el);
