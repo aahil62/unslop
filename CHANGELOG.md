@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v0.2.0] - 2026-06-12
+### Added
+- **Client report**: `/unslop:retheme` now finishes by generating
+  `unslop/CLIENT-REPORT.html` — a self-contained, client-facing deliverable
+  with the score delta, embedded before/after screenshots, and plain-language
+  findings. Format defined in new `rules/client-report.md`.
+
 ## [v0.1.0 — unslop] - 2026-06-11
 ### Changed (full pivot)
 - Project pivoted from a generic AI-dev methodology kit to **Unslop**: a

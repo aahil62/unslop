@@ -59,6 +59,11 @@ screenshots you have actually looked at.**
 - Before/after: first audit screenshots vs. final ones, linked in a short
   `unslop/RETHEME-REPORT.md`.
 - Any acceptance check that could not be met: say so explicitly — no silent skips.
+- **Client report.** Also write `unslop/CLIENT-REPORT.html` — a self-contained
+  HTML page for a non-technical reader, following
+  `${CLAUDE_PLUGIN_ROOT}/rules/client-report.md`. Score delta up front,
+  before/after screenshots embedded, what changed in plain language. This is
+  the artifact a freelancer hands to (or invoices) a client.
 - Suggest a commit with a summary of the passes.
 
 ## Scope rules

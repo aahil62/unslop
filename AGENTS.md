@@ -20,6 +20,8 @@ repository.
 - [rules/lane-synthesis.md](rules/lane-synthesis.md) — how to derive a custom
   design lane; the four files in [examples/lanes/](examples/lanes/) are
   calibration examples, never a menu to copy from.
+- [rules/client-report.md](rules/client-report.md) — format for the
+  client-facing `CLIENT-REPORT.html` the retheme stage produces at the end.
 - Scripts in [scripts/](scripts/) provide deterministic checks
   (screenshots + overflow, WCAG AA contrast, static slop scan). Run them with
   Node from the target project's directory; screenshot/contrast checks need

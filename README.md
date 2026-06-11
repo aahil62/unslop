@@ -23,8 +23,9 @@ evidence. It's a Claude Code plugin (Codex-compatible) with three stages:
    lane before anything changes.
 3. **`/unslop:retheme`** — applies the approved lane systematically:
    tokens → typography → section by section → states & motion. After every pass
-   the build must succeed and fresh screenshots are taken. Ends with a re-audit
-   and a before/after report.
+   the build must succeed and fresh screenshots are taken. Ends with a re-audit,
+   a before/after report, and a client-ready `CLIENT-REPORT.html` you can hand
+   to a non-technical site owner.
 
 ## See it work
 
@@ -72,7 +73,7 @@ From your site's repo:
 
 ```
 skills/            audit · interview · retheme (the three workflows)
-rules/             anti-slop-checklist.md (scoring rubric) · lane-synthesis.md (creativity rules)
+rules/             anti-slop-checklist.md (scoring rubric) · lane-synthesis.md (creativity rules) · client-report.md (deliverable format)
 examples/lanes/    4 worked design lanes — calibration for the synthesizer, not a menu
 scripts/           screenshot.mjs · contrast-check.mjs · slop-scan.mjs (deterministic checks)
 AGENTS.md          Codex adapter
@@ -86,7 +87,9 @@ AGENTS.md          Codex adapter
 - No MCP server, no framework, no methodology — three skills and a rubric.
 
 Freelancers: a before/after retheme with an audit score delta is a sellable
-deliverable. Quote the outcome, not hours.
+deliverable — and the retheme stage ends by generating it: a client-ready
+`CLIENT-REPORT.html` with the score delta, before/after screenshots, and what
+changed in plain language. Quote the outcome, not hours.
 
 ## License
 

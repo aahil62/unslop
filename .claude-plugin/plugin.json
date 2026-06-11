@@ -1,7 +1,7 @@
 {
   "name": "unslop",
   "displayName": "Unslop",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Rescue ugly vibe-coded React + Tailwind sites: audit the AI-slop, interview for taste, synthesize a custom design lane, and systematically re-theme with verification.",
   "author": {
     "name": "Aahil Sayed",
