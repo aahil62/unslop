@@ -25,7 +25,7 @@ Unslop is a Claude Code plugin (Codex-compatible) that takes an existing
 **Claude Code:**
 
 ```
-/plugin marketplace add aahilsayed062/unslop
+/plugin marketplace add aahil62/unslop
 /plugin install unslop@unslop
 ```
 
