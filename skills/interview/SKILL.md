@@ -34,7 +34,7 @@ Required inputs:
 
 ## Synthesis
 
-Apply `rules/lane-synthesis.md` steps 1–9 in order. Sharp edges to respect:
+Apply `${CLAUDE_PLUGIN_ROOT}/rules/lane-synthesis.md` steps 1–9 in order. Sharp edges to respect:
 
 - Identity sentence uses two concrete physical places/objects. "Modern and clean" is banned.
 - Exactly 4 palette roles with exact hex; one accent; AA contrast between Ink and

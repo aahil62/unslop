@@ -91,4 +91,4 @@ deliverable. Quote the outcome, not hours.
 ## License
 
 MIT — see [LICENSE](LICENSE). Pre-pivot methodology kit lives on the
-[`legacy-v2`](../../tree/legacy-v2) branch.
+[`legacy-archive`](../../tree/legacy-archive) tag.
