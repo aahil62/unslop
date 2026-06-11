@@ -13,7 +13,7 @@ only the audit report and screenshots.
 
 1. Confirm the project is React + Tailwind (look for `tailwind.config.*` or the
    Tailwind v4 CSS import, plus React in package.json). If it isn't, stop and say:
-   v1 of design-rescue supports React + Tailwind only.
+   v1 of unslop supports React + Tailwind only.
 2. The site must be viewable. Find the dev command (`npm run dev` or equivalent)
    and the port. Start it in the background if not already running.
 
@@ -21,7 +21,7 @@ only the audit report and screenshots.
 
 1. **Capture.** Run the bundled screenshot script against the running site:
    ```bash
-   node "${CLAUDE_PLUGIN_ROOT}/scripts/screenshot.mjs" <url> ./design-rescue/screenshots
+   node "${CLAUDE_PLUGIN_ROOT}/scripts/screenshot.mjs" <url> ./unslop/screenshots
    ```
    It captures 375 / 768 / 1024 / 1440 px full-page shots and reports horizontal
    overflow per viewport. If Playwright is missing, it prints install instructions —
@@ -43,15 +43,15 @@ only the audit report and screenshots.
    buttons + 3-col icon grid → L1 FAIL"). Read key source files to confirm
    suspected failures; do not guess.
 
-4. **Report.** Write `design-rescue/DESIGN-AUDIT.md`:
+4. **Report.** Write `unslop/DESIGN-AUDIT.md`:
    - **Overall score** (passes ÷ applicable × 100) and per-category scores.
    - **Failures with evidence**, grouped by category, referencing checklist IDs.
    - **Top 5 fixes by visual impact**, ordered, each mapped to checklist IDs.
    - Paths to the screenshots.
 
 5. **Tell the user** their score, the 2–3 most damning findings in plain language,
-   and the next step: run `/design-rescue:interview` to define a design lane, then
-   `/design-rescue:retheme` to fix it.
+   and the next step: run `/unslop:interview` to define a design lane, then
+   `/unslop:retheme` to fix it.
 
 ## Rules
 

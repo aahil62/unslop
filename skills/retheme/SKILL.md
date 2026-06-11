@@ -1,24 +1,24 @@
 ---
 name: retheme
-description: Systematically apply an approved design lane (LANE.md) to a React + Tailwind site — tokens first, then section-by-section, with build + screenshot verification after every pass. Use when the user says "retheme", "apply the lane", "make it match the design", or after /design-rescue:interview produced an approved LANE.md.
+description: Systematically apply an approved design lane (LANE.md) to a React + Tailwind site — tokens first, then section-by-section, with build + screenshot verification after every pass. Use when the user says "retheme", "apply the lane", "make it match the design", or after /unslop:interview produced an approved LANE.md.
 ---
 
 # Retheme
 
 Apply the approved lane to the codebase, pass by pass, with evidence at every step.
-This is the only design-rescue skill that edits source.
+This is the only unslop skill that edits source.
 
 ## Preconditions (hard)
 
-1. `design-rescue/LANE.md` exists and was user-approved. If missing, stop and
-   run `/design-rescue:interview` first.
+1. `unslop/LANE.md` exists and was user-approved. If missing, stop and
+   run `/unslop:interview` first.
 2. Clean git state: ask the user to commit or stash, or create a branch
-   (`design-rescue/retheme`) before touching anything.
+   (`unslop/retheme`) before touching anything.
 3. `npm run build` passes **before** you start. If it doesn't, fix nothing
    design-related — report the build error and stop.
-4. Read in full: `design-rescue/LANE.md`,
+4. Read in full: `unslop/LANE.md`,
    `${CLAUDE_PLUGIN_ROOT}/rules/anti-slop-checklist.md`, and
-   `design-rescue/DESIGN-AUDIT.md` if present (its Top 5 fixes get priority).
+   `unslop/DESIGN-AUDIT.md` if present (its Top 5 fixes get priority).
 
 ## Passes (in order — never skip ahead)
 
@@ -45,7 +45,7 @@ contrast-check, checklist walk) and verify every acceptance check in LANE.md.
 
 ```bash
 npm run build   # must pass clean
-node "${CLAUDE_PLUGIN_ROOT}/scripts/screenshot.mjs" <url> ./design-rescue/screenshots/pass-N
+node "${CLAUDE_PLUGIN_ROOT}/scripts/screenshot.mjs" <url> ./unslop/screenshots/pass-N
 ```
 
 Read the new screenshots and confirm the pass did what it claimed at 375 and
@@ -57,7 +57,7 @@ screenshots you have actually looked at.**
 
 - Final score from Pass 5 vs. the original audit score, stated plainly.
 - Before/after: first audit screenshots vs. final ones, linked in a short
-  `design-rescue/RETHEME-REPORT.md`.
+  `unslop/RETHEME-REPORT.md`.
 - Any acceptance check that could not be met: say so explicitly — no silent skips.
 - Suggest a commit with a summary of the passes.
 

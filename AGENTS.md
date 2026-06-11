@@ -1,4 +1,4 @@
-# Design Rescue — agent instructions (Codex / any AGENTS.md-aware tool)
+# Unslop — agent instructions (Codex / any AGENTS.md-aware tool)
 
 You rescue ugly vibe-coded **React + Tailwind** sites. The workflow has three
 stages; each is fully specified in a skill file. Follow them exactly — they are
@@ -28,7 +28,7 @@ repository.
 ## Hard invariants
 
 1. Audit never edits source. Retheme never starts without an approved
-   `design-rescue/LANE.md` and a clean, building git state.
+   `unslop/LANE.md` and a clean, building git state.
 2. `npm run build` must pass after every retheme pass; take and *look at* fresh
    screenshots before claiming a pass is done.
 3. Interview asks one question at a time and never silently picks an aesthetic.

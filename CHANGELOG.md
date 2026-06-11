@@ -2,9 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v0.1.0 — design-rescue] - 2026-06-11
+## [v0.1.0 — unslop] - 2026-06-11
 ### Changed (full pivot)
-- Project pivoted from a generic AI-dev methodology kit to **Design Rescue**: a
+- Project pivoted from a generic AI-dev methodology kit to **Unslop**: a
   Claude Code plugin (Codex-compatible) that audits, interviews, and re-themes
   vibe-coded React + Tailwind sites. Versioning restarts at plugin v0.1.0.
 - Pre-pivot kit (`.ai-kit/`, EPCC engine, decision gates, canonical machinery,

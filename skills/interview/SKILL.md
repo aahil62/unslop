@@ -1,13 +1,13 @@
 ---
 name: interview
-description: Interview the user about taste, brand, and audience, then synthesize a custom design lane (LANE.md + tokens) for their React + Tailwind site. Use when the user wants a design direction, says "make it look premium/professional/not AI-generated", or after /design-rescue:audit before any re-theming. No code changes — output is the approved LANE.md.
+description: Interview the user about taste, brand, and audience, then synthesize a custom design lane (LANE.md + tokens) for their React + Tailwind site. Use when the user wants a design direction, says "make it look premium/professional/not AI-generated", or after /unslop:audit before any re-theming. No code changes — output is the approved LANE.md.
 ---
 
 # Design Interview → Lane Synthesis
 
 Turn the user's taste into a locked, custom design lane. No two runs should
 produce the same lane. **No code is modified** — the deliverable is an approved
-`design-rescue/LANE.md` plus a ready-to-paste tokens block.
+`unslop/LANE.md` plus a ready-to-paste tokens block.
 
 Read first, in full:
 - `${CLAUDE_PLUGIN_ROOT}/rules/lane-synthesis.md` — the synthesis rules (binding)
@@ -19,7 +19,7 @@ Read first, in full:
 
 Ask **one question at a time** (use AskUserQuestion with options where natural).
 Skip anything already answered by the conversation, the audit report
-(`design-rescue/DESIGN-AUDIT.md`, if present), or visible brand assets in the repo.
+(`unslop/DESIGN-AUDIT.md`, if present), or visible brand assets in the repo.
 Required inputs:
 
 1. Brand name + one-line purpose (free text)
@@ -52,8 +52,8 @@ type pairing, the signature moment — then ask the user to approve, tweak, or
 re-roll (a meaningfully different lane from the same answers). Iterate until
 approved. **Only after explicit approval**, write:
 
-- `design-rescue/LANE.md` — using the output format in `rules/lane-synthesis.md`
+- `unslop/LANE.md` — using the output format in `rules/lane-synthesis.md`
 - The tokens block inside it: `:root` CSS variables + matching Tailwind config
   mapping, ready to paste
 
-Then point the user to `/design-rescue:retheme`.
+Then point the user to `/unslop:retheme`.
