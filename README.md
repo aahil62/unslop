@@ -26,6 +26,17 @@ evidence. It's a Claude Code plugin (Codex-compatible) with three stages:
    the build must succeed and fresh screenshots are taken. Ends with a re-audit
    and a before/after report.
 
+## See it work
+
+A stock vibe-coded landing page (default indigo, purple→blue gradient, emoji
+icons, gray-on-white text failing contrast) scored **27/100**. After one
+audit → interview → retheme pass into a synthesized "Print Run" lane — **100/100**,
+WCAG AA in both light and dark, no horizontal scroll at any width.
+
+| Before — 27/100 | After (light) — 100/100 | After (dark) |
+|:---:|:---:|:---:|
+| ![Before](docs/before-after/before-1440.png) | ![After, light mode](docs/before-after/after-light-1440.png) | ![After, dark mode](docs/before-after/after-dark-1440.png) |
+
 ## Install
 
 **Claude Code:**
