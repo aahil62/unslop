@@ -28,7 +28,13 @@ if (!url) {
 const viewports = [375, 768, 1024, 1440];
 await mkdir(outDir, { recursive: true });
 
-const browser = await chromium.launch();
+// Prefer Playwright's bundled chromium; fall back to locally installed Chrome.
+let browser;
+try {
+  browser = await chromium.launch();
+} catch {
+  browser = await chromium.launch({ channel: "chrome" });
+}
 const results = [];
 for (const width of viewports) {
   const page = await browser.newPage({ viewport: { width, height: 900 } });

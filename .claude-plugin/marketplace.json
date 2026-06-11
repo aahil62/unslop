@@ -1,5 +1,6 @@
 {
   "name": "design-rescue",
+  "description": "Design Rescue — audit, interview, and re-theme vibe-coded React + Tailwind sites out of the generic-AI look.",
   "owner": {
     "name": "Aahil Sayed"
   },

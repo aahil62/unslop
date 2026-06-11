@@ -2,8 +2,8 @@
 // WCAG AA contrast check on a rendered page (checklist item C3).
 // Usage: node contrast-check.mjs <url>
 // Requires Playwright in the *project* being audited.
-// Note: background detection walks ancestors for the first opaque background;
-// text over images/gradients needs manual review.
+// Text over background-images/gradients is reported under "manualReview",
+// not as a failure — verify those by looking at the screenshots.
 import { createRequire } from "node:module";
 import { join } from "node:path";
 
@@ -25,25 +25,45 @@ if (!url) {
   process.exit(1);
 }
 
-const browser = await chromium.launch();
+// Prefer Playwright's bundled chromium; fall back to locally installed Chrome.
+let browser;
+try {
+  browser = await chromium.launch();
+} catch {
+  browser = await chromium.launch({ channel: "chrome" });
+}
 const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 await page.goto(url, { waitUntil: "networkidle", timeout: 30000 });
 await page.waitForTimeout(800);
 
 const samples = await page.evaluate(() => {
-  const parse = (c) => {
-    const m = c.match(/[\d.]+/g);
-    return m ? m.map(Number) : null;
+  // Normalize any CSS color (rgb, oklch, lab, color(srgb …)) to RGBA bytes
+  // by drawing it on a canvas.
+  const canvas = document.createElement("canvas");
+  canvas.width = canvas.height = 1;
+  const ctx = canvas.getContext("2d", { willReadFrequently: true });
+  const toRGBA = (cssColor) => {
+    ctx.clearRect(0, 0, 1, 1);
+    ctx.fillStyle = "#fff";
+    ctx.fillStyle = cssColor; // invalid values keep previous fillStyle
+    ctx.fillRect(0, 0, 1, 1);
+    return [...ctx.getImageData(0, 0, 1, 1).data]; // [r,g,b,a 0-255]
   };
+
+  // Walk ancestors for the first opaque background; flag gradients/images.
   const effectiveBg = (el) => {
     let node = el;
     while (node && node instanceof Element) {
-      const p = parse(getComputedStyle(node).backgroundColor);
-      if (p && (p.length < 4 || p[3] >= 0.9)) return p.slice(0, 3);
+      const cs = getComputedStyle(node);
+      if (cs.backgroundImage && cs.backgroundImage !== "none")
+        return { image: true };
+      const rgba = toRGBA(cs.backgroundColor);
+      if (rgba[3] >= 230) return { rgb: rgba.slice(0, 3) };
       node = node.parentElement;
     }
-    return [255, 255, 255];
+    return { rgb: [255, 255, 255] };
   };
+
   const out = [];
   const els = document.querySelectorAll(
     "p,h1,h2,h3,h4,h5,h6,a,button,li,label,td,th,span"
@@ -56,8 +76,8 @@ const samples = await page.evaluate(() => {
     const r = el.getBoundingClientRect();
     if (r.width < 2 || r.height < 2) continue;
     const cs = getComputedStyle(el);
-    const fg = parse(cs.color);
-    if (!fg || (fg.length === 4 && fg[3] < 0.5)) continue;
+    const fg = toRGBA(cs.color);
+    if (fg[3] < 128) continue;
     out.push({
       text: el.textContent.trim().slice(0, 50),
       tag: el.tagName.toLowerCase(),
@@ -85,14 +105,27 @@ const ratio = (a, b) => {
 
 const seen = new Set();
 const failures = [];
+const manualReview = [];
 let checked = 0;
 for (const s of samples) {
   const large = s.fontSize >= 24 || (s.fontSize >= 18.66 && s.fontWeight >= 700);
-  const key = `${s.fg}|${s.bg}|${large}`;
+  if (s.bg.image) {
+    const key = `img|${s.fg}|${s.text}`;
+    if (!seen.has(key)) {
+      seen.add(key);
+      manualReview.push({
+        sample: `<${s.tag}> "${s.text}"`,
+        reason: "text over background-image/gradient — check screenshots",
+        fg: `rgb(${s.fg.join(",")})`,
+      });
+    }
+    continue;
+  }
+  const key = `${s.fg}|${s.bg.rgb}|${large}`;
   if (seen.has(key)) continue;
   seen.add(key);
   checked++;
-  const r = ratio(s.fg, s.bg);
+  const r = ratio(s.fg, s.bg.rgb);
   const threshold = large ? 3 : 4.5;
   if (r < threshold) {
     failures.push({
@@ -100,15 +133,22 @@ for (const s of samples) {
       ratio: +r.toFixed(2),
       required: threshold,
       fg: `rgb(${s.fg.join(",")})`,
-      bg: `rgb(${s.bg.join(",")})`,
+      bg: `rgb(${s.bg.rgb.join(",")})`,
       fontSize: s.fontSize,
     });
   }
 }
 
-console.log(JSON.stringify({ url, uniquePairsChecked: checked, failures }, null, 2));
+console.log(
+  JSON.stringify(
+    { url, uniquePairsChecked: checked, failures, manualReview },
+    null,
+    2
+  )
+);
 console.log(
   failures.length
     ? `FAIL C3: ${failures.length} contrast failure(s) below WCAG AA`
-    : "PASS C3: all sampled text meets WCAG AA"
+    : "PASS C3: all sampled solid-background text meets WCAG AA" +
+      (manualReview.length ? ` (${manualReview.length} need manual review)` : "")
 );

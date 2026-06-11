@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v0.1.0 — design-rescue] - 2026-06-11
+### Changed (full pivot)
+- Project pivoted from a generic AI-dev methodology kit to **Design Rescue**: a
+  Claude Code plugin (Codex-compatible) that audits, interviews, and re-themes
+  vibe-coded React + Tailwind sites. Versioning restarts at plugin v0.1.0.
+- Pre-pivot kit (`.ai-kit/`, EPCC engine, decision gates, canonical machinery,
+  freelance playbook drafts) archived on the `legacy-v2` branch and removed from main.
+### Added
+- Three plugin skills: `audit`, `interview` (custom lane synthesis), `retheme`
+  (pass-by-pass with build + screenshot verification).
+- `rules/anti-slop-checklist.md` (evidence-based scoring rubric) and
+  `rules/lane-synthesis.md` (rules-driven creativity), harvested and rewritten
+  from the legacy cards.
+- Four worked lane examples (Organic Tech, Midnight Luxe, Brutalist Signal,
+  Vapor Clinic) as synthesizer calibration.
+- Deterministic check scripts: `screenshot.mjs` (4 breakpoints + overflow),
+  `contrast-check.mjs` (WCAG AA, oklch-safe, gradient-aware), `slop-scan.mjs`
+  (static slop tells with file:line evidence) — verified against a deliberately
+  generic Next.js fixture.
+- Plugin + marketplace manifests; `AGENTS.md` Codex adapter.
+
 ## [v2.0.1] - 2026-03-02
 ### Fixed
 - Added `.ai-kit/CANONICAL.md` as single source of truth (SSOT) for version, EPCC phases, gate range, templates, cards, and canonical commands.
