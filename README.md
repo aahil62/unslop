@@ -1,9 +1,15 @@
 # Unslop
 
-> Your vibe-coded site works — but it *looks* AI-generated. This plugin fixes that.
+> The rescue tool for sites you already built. Audit → interview → re-theme an
+> existing **React + Tailwind** site into a custom identity — verified at every
+> step, without breaking your build.
 
-Unslop is a Claude Code plugin (Codex-compatible) that takes an existing
-**React + Tailwind** site through three stages:
+Most design skills *generate* new UI or *lint* one dimension of it. Unslop does
+neither: it takes a site you've **already shipped** and runs it through a single
+stateful pipeline — measure what's wrong, decide what "good" means for *your*
+brand, then apply it with a hard build-and-screenshot check after every change.
+The output of each stage feeds the next, and nothing claims "done" without
+evidence. It's a Claude Code plugin (Codex-compatible) with three stages:
 
 1. **`/unslop:audit`** — scores your site against an evidence-based
    anti-slop checklist: screenshots at 4 breakpoints, WCAG contrast checks, and a
