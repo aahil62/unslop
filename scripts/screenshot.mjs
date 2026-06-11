@@ -19,7 +19,7 @@ try {
   process.exit(1);
 }
 
-const [url, outDir = "./design-rescue/screenshots"] = process.argv.slice(2);
+const [url, outDir = "./unslop/screenshots"] = process.argv.slice(2);
 if (!url) {
   console.error("usage: node screenshot.mjs <url> [outDir]");
   process.exit(1);

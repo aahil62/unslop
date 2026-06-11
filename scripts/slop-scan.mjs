@@ -8,7 +8,7 @@ import { join, relative, extname } from "node:path";
 const root = process.argv[2] || ".";
 const SKIP_DIRS = new Set([
   "node_modules", ".next", ".git", "dist", "build", "out",
-  ".turbo", ".vercel", "coverage", "design-rescue",
+  ".turbo", ".vercel", "coverage", "unslop",
 ]);
 const EXTS = new Set([".js", ".jsx", ".ts", ".tsx", ".html", ".css", ".mdx"]);
 

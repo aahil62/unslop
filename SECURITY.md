@@ -10,18 +10,20 @@ Instead, open a private security advisory through the repository's Security tab,
 
 ## Scope
 
-This project is a collection of markdown files and shell scripts. It does not:
-- Process user data
-- Authenticate users
-- Store credentials
-- Make network requests
+This project is a Claude Code plugin: markdown skill files plus small Node
+verification scripts (`scripts/*.mjs`). The scripts drive a local Playwright
+browser against a dev server you run (`localhost`), and read your project's
+source files to scan for design issues. They do not:
+- Process or transmit user data to third parties
+- Authenticate users or store credentials
+- Make network requests beyond the local site you point them at
 
-The primary security concern is ensuring that no private content, credentials, API keys, or personal information is accidentally committed to the repository.
+The primary security concern is ensuring that no private content, credentials,
+API keys, or personal information is accidentally committed to the repository.
 
 ## Best Practices
 
-When using this kit:
+When using this plugin:
 - Never commit `.env` files or API keys
-- Do not add credentials to resource cards
-- Run the public-safe scan before pushing changes
+- Point the scripts only at sites/URLs you trust
 - Review the `.gitignore` to ensure sensitive files are excluded
