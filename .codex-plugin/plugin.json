@@ -1,0 +1,20 @@
+{
+  "name": "unslop",
+  "version": "0.2.0",
+  "description": "Rescue ugly vibe-coded React + Tailwind sites: audit the AI-slop, interview for taste, synthesize a custom design lane, and systematically re-theme with verification.",
+  "author": {
+    "name": "Aahil Sayed",
+    "url": "https://github.com/aahil62"
+  },
+  "homepage": "https://github.com/aahil62/unslop",
+  "repository": "https://github.com/aahil62/unslop",
+  "license": "MIT",
+  "keywords": ["design", "tailwind", "react", "ui-polish", "audit", "retheme", "anti-slop"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Unslop",
+    "shortDescription": "Audit, interview, and re-theme vibe-coded React + Tailwind sites out of the generic-AI look.",
+    "longDescription": "Three stages: audit scores your site against an evidence-based anti-slop checklist with screenshots and contrast checks; interview asks about your brand and taste to synthesize a custom design lane; retheme applies it pass by pass with build-and-screenshot verification, ending in a client-ready before/after report.",
+    "developerName": "Aahil Sayed"
+  }
+}

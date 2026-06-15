@@ -47,7 +47,13 @@ WCAG AA in both light and dark, no horizontal scroll at any width.
 /plugin install unslop@unslop
 ```
 
-**Codex / other AGENTS.md-aware tools:** clone this repo and point your agent at
+**Codex:**
+
+```
+codex plugin marketplace add aahil62/unslop
+```
+
+**Other AGENTS.md-aware tools:** clone this repo and point your agent at
 [AGENTS.md](AGENTS.md) — same workflow, same rules.
 
 The audit and retheme stages use Playwright for screenshots and contrast checks.
